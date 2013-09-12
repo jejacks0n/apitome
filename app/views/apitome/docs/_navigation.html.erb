@@ -1,0 +1,28 @@
+<ul class="nav sidenav">
+  <li>
+    <% if Apitome.configuration.single_page %>
+      <a href="#readme">README</a>
+    <% else %>
+      <a href="<%= Apitome.configuration.mount_at %>">README</a>
+    <% end %>
+  </li>
+  <% resources.each do |resource| %>
+    <li>
+      <% if Apitome.configuration.single_page %>
+        <a href="#resource_<%= resource['name'].underscore.gsub(/\s+/, '_') %>"><%= resource['name'] %></a>
+        <ul class="nav">
+          <% resource['examples'].each do |example| %>
+            <li><%= link_to example['description'], "#example_#{example['link'].gsub('.json', '')}" %></li>
+          <% end %>
+        </ul>
+      <% else %>
+        <h5><%= resource['name'] %></h5>
+        <ul class="nav">
+          <% resource['examples'].each do |example| %>
+            <li><%= link_to example['description'], "#{Apitome.configuration.mount_at}/#{example['link'].gsub('.json', '')}" %></li>
+          <% end %>
+        </ul>
+      <% end %>
+    </li>
+  <% end %>
+</ul>
