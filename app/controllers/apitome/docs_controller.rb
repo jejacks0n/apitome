@@ -2,7 +2,7 @@ class Apitome::DocsController < ActionController::Base
 
   layout Apitome.configuration.layout
 
-  helper_method :resources, :example, :formatted_body, :param_headers, :param_extras, :formatted_readme
+  helper_method :resources, :example, :formatted_body, :param_headers, :param_extras, :formatted_readme, :set_example
 
   def index
   end
@@ -24,6 +24,10 @@ class Apitome::DocsController < ActionController::Base
 
   def example
     @example ||= JSON.parse(file_for("#{params[:path]}.json"))
+  end
+
+  def set_example(resource)
+    @example = JSON.parse(file_for("#{resource}.json"))
   end
 
   def formatted_readme

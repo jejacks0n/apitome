@@ -3,37 +3,18 @@
 <head>
   <title><%= Apitome.configuration.title %></title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <%= stylesheet_link_tag    'apitome/application', media: 'all' %>
-  <%= javascript_include_tag 'apitome/application' %>
+  <%= stylesheet_link_tag    Apitome.configuration.css_override || 'apitome/application', media: 'all' %>
+  <%= javascript_include_tag Apitome.configuration.js_override || 'apitome/application' %>
 </head>
 <body>
 
 <div class="container">
-
-  <header class="navbar navbar-fixed-top docs-nav" role="banner">
-    <div class="container">
-      <div class="navbar-header">
-        <h1 class="navbar-brand"><a href="<%= Apitome.configuration.mount_at %>"><%= Apitome.configuration.title %></a></h1>
-      </div>
-    </div>
-  </header>
-
+  <%= render 'header' %>
   <div class="container docs-container">
     <div class="row">
       <div class="col-md-4">
         <div class="sidebar hidden-print" role="complementary">
-          <ul class="nav sidenav">
-            <% resources.each do |resource| %>
-              <li>
-              <a href=""><%= resource['name'] %></a>
-              <ul class="nav">
-              <% resource['examples'].each do |example| %>
-                <li><%= link_to example['description'], "#{Apitome.configuration.mount_at}/#{example['link'].gsub('.json', '')}" %></li>
-                <% end %>
-              </ul>
-              </li>
-            <% end %>
-          </ul>
+          <%= render 'navigation' %>
         </div>
       </div>
       <div class="col-md-8" role="main">
@@ -43,7 +24,6 @@
       </div>
     </div>
   </div>
-
 </div>
 
 </body>
