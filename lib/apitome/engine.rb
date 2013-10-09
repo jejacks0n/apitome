@@ -9,8 +9,10 @@ module Apitome
 
     config.after_initialize do |app|
       # prepend routes so a catchall doesn't get in the way
-      app.routes.prepend do
-        mount Apitome::Engine => Apitome.configuration.mount_at
+      if Apitome.configuration.mount_at.present?
+        app.routes.prepend do
+          mount Apitome::Engine => Apitome.configuration.mount_at
+        end
       end
     end
 
