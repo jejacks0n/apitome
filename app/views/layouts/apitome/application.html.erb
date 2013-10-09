@@ -6,14 +6,14 @@
   <%= stylesheet_link_tag    Apitome.configuration.css_override || 'apitome/application', media: 'all' %>
   <%= javascript_include_tag Apitome.configuration.js_override || 'apitome/application' %>
 </head>
-<body>
+<body class="<%= Apitome.configuration.single_page ? 'single-page' : '' %>">
 
 <div class="container">
   <%= render 'header' %>
   <div class="container docs-container">
     <div class="row">
       <div class="col-md-4">
-        <div class="sidebar hidden-print" role="complementary">
+        <div id="sidebar" class="sidebar hidden-print" role="complementary">
           <%= render 'navigation' %>
         </div>
       </div>

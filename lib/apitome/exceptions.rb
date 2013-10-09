@@ -1,3 +1,3 @@
 module Apitome
-  class Failure < Exception; end
+  class FileNotFound < Exception; end
 end

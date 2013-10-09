@@ -4,10 +4,14 @@
  */
 
 body {
-  position: relative; /* For scrollyspy */
-  padding-top: 50px; /* Account for fixed navbar */
+  position: relative;
+  padding-top: 50px;
 }
 
+h1,
+h2 {
+  margin-top: 30px;
+}
 pre code {
   padding: 0;
   background: transparent;
@@ -17,13 +21,13 @@ pre code {
   font-weight: normal;
 }
 
-
 .docs-nav {
   text-shadow: 0 -1px 0 rgba(0,0,0,.15);
   background-color: #eee;
   border-color: #ddd;
   border-top: 4px solid #009dc4;
   box-shadow: 0 1px 0 rgba(255,255,255,.1);
+  margin-bottom: 25px;
 }
 .docs-nav .navbar-brand {
   margin: 0;
@@ -33,14 +37,13 @@ pre code {
   text-decoration: none;
 }
 
-
 .sidebar.affix {
   position: static;
 }
 .sidenav {
   margin-top: 30px;
   margin-bottom: 30px;
-  padding-top:    10px;
+  padding-top: 10px;
   padding-bottom: 10px;
   text-shadow: 0 1px 0 #fff;
   background-color: #f7f5fa;
@@ -50,10 +53,6 @@ pre code {
   display: block;
   color: #716b7a;
   padding: 5px 20px;
-}
-.sidebar .nav h5 {
-  padding: 0 20px 0;
-  color: #716b7a;
 }
 .sidebar .nav > li > a:hover,
 .sidebar .nav > li > a:focus {
@@ -65,12 +64,11 @@ pre code {
 .sidebar .nav > .active:hover > a,
 .sidebar .nav > .active:focus > a {
   font-weight: bold;
-  color: #563d7c;
+  color: #333;
   background-color: transparent;
-  border-right: 1px solid #563d7c;
+  border-right: 1px solid #009dc4;
 }
 .sidebar .nav .nav {
-  /*display: none; *//* Hide by default, but at >768px, show it */
   margin-bottom: 8px;
 }
 .sidebar .nav .nav > li > a {
@@ -80,35 +78,43 @@ pre code {
   font-size: 90%;
 }
 
+body.single-page .docs-section section.readme article {
+  margin-top: -50px;
+  margin-bottom: -20px;
+}
+body.single-page .docs-section section article {
+  padding-top: 50px;
+}
+
 @media screen and (min-width: 992px) {
-  .sidebar .nav > .active > ul {
-    display: block;
+  .sidebar.affix {
+    position: fixed;
+    top: 80px;
   }
   .sidebar.affix,
   .sidebar.affix-bottom {
-    width: 213px;
-  }
-  .sidebar.affix {
-    position: fixed; /* Undo the static from mobile first approach */
-    top: 80px;
+    width: 283px;
   }
   .sidebar.affix-bottom {
-    position: absolute; /* Undo the static from mobile first approach */
+    position: absolute;
   }
-  .sidebar.affix-bottom .sidenav,
-  .sidebar.affix .sidenav {
+  .sidebar.affix .sidenav,
+  .sidebar.affix-bottom .sidenav {
     margin-top: 0;
     margin-bottom: 0;
   }
-}
-@media screen and (min-width: 1200px) {
-  .sidebar.affix-bottom,
-  .sidebar.affix {
-    width: 263px;
+  body.single-page .sidebar .nav .nav {
+    display: none;
+  }
+  body.single-page .sidebar .nav > .active > ul {
+    display: block;
   }
 }
 
-
-.docs-section + .docs-section {
-  padding-top: 40px;
+@media screen and (min-width: 1200px) {
+  .sidebar.affix,
+  .sidebar.affix-bottom {
+    width: 350px;
+  }
 }
+

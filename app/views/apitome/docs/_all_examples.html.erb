@@ -1,7 +1,7 @@
 <% resources.each do |resource| %>
-  <section class="example" id="resource_<%= resource['name'].underscore.gsub(/\s+/, '_') %>">
+  <section class="example" id="<%= id_for(resource['name']) %>">
     <% resource['examples'].each do |example| %>
-      <article id="example_<%= example['link'].gsub('.json', '') %>">
+      <article id="<%= id_for(example['link'].gsub('.json', '')) %>">
         <% set_example(example['link'].gsub('.json', '')) %>
         <%= render partial: 'example' %>
       </article>

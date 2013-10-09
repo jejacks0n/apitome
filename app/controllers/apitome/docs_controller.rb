@@ -2,7 +2,7 @@ class Apitome::DocsController < ActionController::Base
 
   layout Apitome.configuration.layout
 
-  helper_method :resources, :example, :formatted_body, :param_headers, :param_extras, :formatted_readme, :set_example
+  helper_method :resources, :example, :formatted_body, :param_headers, :param_extras, :formatted_readme, :set_example, :id_for
 
   def index
   end
@@ -14,7 +14,7 @@ class Apitome::DocsController < ActionController::Base
 
   def file_for(file)
     file = Apitome.configuration.root.join(Apitome.configuration.doc_path, file)
-    return '' unless File.exists?(file)
+    raise Apitome::FileNotFound unless File.exists?(file)
     File.read(file)
   end
 
@@ -54,6 +54,10 @@ class Apitome::DocsController < ActionController::Base
       extras += param.reject{ |k,v| %w{name description required scope}.include?(k) }.keys
     end
     extras.uniq
+  end
+
+  def id_for(str)
+    str.gsub(/\.json$/, '').underscore.gsub(/[^0-9a-z]+/i, '-')
   end
 
 end
