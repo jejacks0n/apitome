@@ -82,8 +82,17 @@ body.single-page .docs-section section.readme article {
   margin-top: -50px;
   margin-bottom: -20px;
 }
+
 body.single-page .docs-section section article {
   padding-top: 50px;
+}
+
+body.single-page .docs-section section h2.resource-name {
+  padding-top: 50px;
+}
+
+body.single-page .docs-section section h2.resource-name + article {
+  padding-top: 0px;
 }
 
 @media screen and (min-width: 992px) {
