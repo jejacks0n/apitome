@@ -9,11 +9,14 @@
       </tr>
       <% params.each do |param| %>
         <tr>
-          <td class="name <%= param['required'] ? 'required' : '' %>">
+          <td class="name">
             <% if param['scope'] %>
               <%= "#{param['scope']}[#{param['name']}]" %>
             <% else %>
               <%= param['name'] %>
+            <% end %>
+            <% if param['required'] %>
+              <span class="label label-danger">required</span>
             <% end %>
           </td>
           <td class="description"><%= param['description'] %></td>
