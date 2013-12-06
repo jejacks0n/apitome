@@ -1,6 +1,3 @@
-<% unless Apitome.configuration.single_page %>
-<h2><%= example['resource'] %> API</h2>
-<% end %>
 <h3><%= example['description'] %></h3>
 
 <%= render partial: 'apitome/docs/explanation',    locals: {explaination: example['explanation']} if example['explanation'] %>
