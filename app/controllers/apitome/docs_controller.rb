@@ -10,7 +10,7 @@ class Apitome::DocsController < ActionController::Base
   def show
   end
 
-  #private
+  private
 
   def file_for(file)
     file = Apitome.configuration.root.join(Apitome.configuration.doc_path, file)
