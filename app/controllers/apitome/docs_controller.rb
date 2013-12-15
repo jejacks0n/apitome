@@ -10,11 +10,11 @@ class Apitome::DocsController < ActionController::Base
   def show
   end
 
-  private
+  #private
 
   def file_for(file)
     file = Apitome.configuration.root.join(Apitome.configuration.doc_path, file)
-    raise Apitome::FileNotFound unless File.exists?(file)
+    raise Apitome::FileNotFound.new, "Unable to find #{file}" unless File.exists?(file)
     File.read(file)
   end
 
