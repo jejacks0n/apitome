@@ -14,7 +14,7 @@ class Apitome::DocsController < ActionController::Base
 
   def file_for(file)
     file = Apitome.configuration.root.join(Apitome.configuration.doc_path, file)
-    raise Apitome::FileNotFound unless File.exists?(file)
+    raise Apitome::FileNotFound.new, "Unable to find #{file}" unless File.exists?(file)
     File.read(file)
   end
 
@@ -36,7 +36,7 @@ class Apitome::DocsController < ActionController::Base
   end
 
   def formatted_body(body, type)
-    if type =~ /json/
+    if type =~ /json/ && body.present?
       JSON.pretty_generate(JSON.parse(body))
     else
       body
