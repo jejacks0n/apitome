@@ -41,6 +41,9 @@ class Apitome::DocsController < ActionController::Base
     else
       body
     end
+  rescue JSON::ParserError
+    return body if body == " "
+    raise JSON::ParserError
   end
 
   def param_headers(params)
