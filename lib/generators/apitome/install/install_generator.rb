@@ -17,8 +17,8 @@ module Apitome
 
       def copy_assets
         return unless options[:assets]
-        copy_file "../../../../app/assets/javascripts/apitome/bundle.js", "public/assets/apitome/application.js"
-        copy_file "../../../../app/assets/stylesheets/apitome/bundle.css", "public/assets/apitome/application.css"
+        copy_file "../../../../app/assets/javascripts/apitome/bundle.js", "public/javascripts/apitome/application.js"
+        copy_file "../../../../app/assets/stylesheets/apitome/bundle.css", "public/stylesheets/apitome/application.css"
       end
 
       def display_readme
