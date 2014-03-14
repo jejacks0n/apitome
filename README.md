@@ -39,6 +39,8 @@ You can view your documentation at the default `api/docs` route.
 
 ## Configuration
 
+After installation, your app will have an apitome initializer (app/config/initializers/apitome.rb). You will find the following parameters that can be used to customize apitome. Note: Restart rails after changing any of these parameters.
+
 <dl>
 
 <dt> mount_at </dt><dd>
