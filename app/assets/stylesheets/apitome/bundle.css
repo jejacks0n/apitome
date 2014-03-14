@@ -159,6 +159,9 @@ h1,
 h2 {
   margin-top: 30px;
 }
+pre {
+  background: #fcfbf9;
+}
 pre code {
   padding: 0;
   background: transparent;
@@ -170,9 +173,9 @@ pre code {
 
 .docs-nav {
   text-shadow: 0 -1px 0 rgba(0,0,0,.15);
-  background-color: #eee;
+  background-color: #f4f3ee;
   border-color: #ddd;
-  border-top: 4px solid #009dc4;
+  border-top: 3px solid #009dc4;
   box-shadow: 0 1px 0 rgba(255,255,255,.1);
   margin-bottom: 25px;
 }
