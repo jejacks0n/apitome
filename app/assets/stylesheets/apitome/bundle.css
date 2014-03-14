@@ -172,7 +172,6 @@ pre code {
 }
 
 .docs-nav {
-  text-shadow: 0 -1px 0 rgba(0,0,0,.15);
   background-color: #f4f3ee;
   border-color: #ddd;
   border-top: 3px solid #009dc4;
@@ -181,9 +180,10 @@ pre code {
 }
 .docs-nav .navbar-brand {
   margin: 0;
+  margin-left: 0 !important;
 }
 .docs-nav .navbar-brand a {
-  color: #333;
+  color: #482b25;
   text-decoration: none;
 }
 
@@ -195,7 +195,6 @@ pre code {
   margin-bottom: 30px;
   padding-top: 10px;
   padding-bottom: 10px;
-  text-shadow: 0 1px 0 #fff;
   background-color: #f4f3ee;
   border-radius: 5px;
 }
@@ -207,14 +206,14 @@ pre code {
 .sidebar .nav > li > a:hover,
 .sidebar .nav > li > a:focus {
   text-decoration: none;
-  background-color: #e5e3e9;
+  background-color: #e9e4df;
   border-right: 1px solid #dbd8e0;
 }
 .sidebar .nav > .active > a,
 .sidebar .nav > .active:hover > a,
 .sidebar .nav > .active:focus > a {
   font-weight: bold;
-  color: #333;
+  color: #716b7a;
   background-color: transparent;
   border-right: 1px solid #009dc4;
 }

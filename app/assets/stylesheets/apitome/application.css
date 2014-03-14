@@ -25,18 +25,18 @@ pre code {
 }
 
 .docs-nav {
-  text-shadow: 0 -1px 0 rgba(0,0,0,.15);
   background-color: #f4f3ee;
   border-color: #ddd;
-  border-top: 3px solid #009dc4;
+  border-top: 3px solid #18c2e8;
   box-shadow: 0 1px 0 rgba(255,255,255,.1);
   margin-bottom: 25px;
 }
 .docs-nav .navbar-brand {
   margin: 0;
+  margin-left: 0 !important;
 }
 .docs-nav .navbar-brand a {
-  color: #333;
+  color: #482b25;
   text-decoration: none;
 }
 
@@ -48,7 +48,6 @@ pre code {
   margin-bottom: 30px;
   padding-top: 10px;
   padding-bottom: 10px;
-  text-shadow: 0 1px 0 #fff;
   background-color: #f4f3ee;
   border-radius: 5px;
 }
@@ -60,16 +59,16 @@ pre code {
 .sidebar .nav > li > a:hover,
 .sidebar .nav > li > a:focus {
   text-decoration: none;
-  background-color: #e5e3e9;
+  background-color: #e9e4df;
   border-right: 1px solid #dbd8e0;
 }
 .sidebar .nav > .active > a,
 .sidebar .nav > .active:hover > a,
 .sidebar .nav > .active:focus > a {
   font-weight: bold;
-  color: #333;
+  color: #716b7a;
   background-color: transparent;
-  border-right: 1px solid #009dc4;
+  border-right: 1px solid #18c2e8;
 }
 .sidebar .nav .nav {
   margin-bottom: 8px;
@@ -85,17 +84,8 @@ body.single-page .docs-section section.readme article {
   margin-top: -50px;
   margin-bottom: -20px;
 }
-
 body.single-page .docs-section section article {
   padding-top: 50px;
-}
-
-body.single-page .docs-section section h2.resource-name {
-  padding-top: 50px;
-}
-
-body.single-page .docs-section section h2.resource-name + article {
-  padding-top: 0px;
 }
 
 @media screen and (min-width: 992px) {
