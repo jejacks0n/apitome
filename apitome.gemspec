@@ -18,5 +18,5 @@ Gem::Specification.new do |s|
 
   s.add_dependency 'railties', ['>= 3.2.5', '< 5']
   s.add_dependency 'rspec_api_documentation'
-  s.add_dependency 'github-markdown'
+  s.add_dependency 'kramdown', '1.3.3'
 end

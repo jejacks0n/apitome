@@ -32,7 +32,7 @@ class Apitome::DocsController < ActionController::Base
 
   def formatted_readme
     file = Apitome.configuration.root.join(Apitome.configuration.doc_path, Apitome.configuration.readme)
-    GitHub::Markdown.render_gfm(file_for(file))
+    Kramdown::Document.new(file_for(file)).to_html
   end
 
   def formatted_body(body, type)
