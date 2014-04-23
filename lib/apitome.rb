@@ -4,4 +4,4 @@ require 'apitome/configuration'
 
 require 'apitome/engine'
 
-require 'github/markdown'
+require 'kramdown'
