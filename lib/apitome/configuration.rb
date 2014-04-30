@@ -19,6 +19,10 @@ module Apitome
     def self.root=(path)
       @@root = Pathname.new(path.to_s) if path.present?
     end
+
+    def self.code_theme_url
+      "apitome/highlight_themes/#{@@code_theme}"
+    end
   end
 
   mattr_accessor :configuration
