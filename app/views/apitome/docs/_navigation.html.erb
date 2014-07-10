@@ -1,9 +1,9 @@
 <ul class="nav sidenav">
   <li>
     <% if Apitome.configuration.single_page %>
-      <a href="#readme">README</a>
+      <a href="#readme"><%= t(:readme) %></a>
     <% else %>
-      <a href="<%= Apitome.configuration.mount_at %>">README</a>
+      <a href="<%= Apitome.configuration.mount_at %>"><%= t(:readme) %></a>
     <% end %>
   </li>
   <% resources.each do |resource| %>
