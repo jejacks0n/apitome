@@ -1,0 +1,11 @@
+en:
+  body: Body
+  curl: cURL
+  headers: Headers
+  parameters: Parameters
+  query_parameters: Query Parameters
+  readme: README
+  request: Request
+  response: Response
+  route: Route
+  status: Status
