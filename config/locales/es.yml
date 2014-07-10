@@ -1,0 +1,11 @@
+es:
+  body: Cuerpo
+  curl: cURL
+  headers: Encabezados
+  parameters: Parametros
+  query_parameters: Parámetros de la consulta
+  readme: LEEME
+  request: Solicitud
+  response: Respuesta
+  route: Ruta
+  status: Estado
