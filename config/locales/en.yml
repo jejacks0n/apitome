@@ -7,5 +7,6 @@ en:
   readme: README
   request: Request
   response: Response
+  response_fields: Response Fields
   route: Route
   status: Status
