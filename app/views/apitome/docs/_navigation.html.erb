@@ -1,11 +1,13 @@
 <ul class="nav sidenav">
-  <li>
-    <% if Apitome.configuration.single_page %>
-      <a href="#readme"><%= t(:readme) %></a>
-    <% else %>
-      <a href="<%= Apitome.configuration.mount_at %>"><%= t(:readme) %></a>
-    <% end %>
-  </li>
+  <% if Apitome.configuration.readme %>
+    <li>
+      <% if Apitome.configuration.single_page %>
+        <a href="#readme"><%= t(:readme) %></a>
+      <% else %>
+        <a href="<%= Apitome.configuration.mount_at %>"><%= t(:readme) %></a>
+      <% end %>
+    </li>
+  <% end %>
   <% resources.each do |resource| %>
     <li>
       <% if Apitome.configuration.single_page %>

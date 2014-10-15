@@ -35,6 +35,7 @@ Apitome.setup do |config|
 
   # You can provide a "README" style markdown file for the documentation, which is a useful place to include general
   # information. This path is relative to your doc_path configuration.
+  # Use nil for no readme.
   config.readme = '../api.md'
 
   # Apitome can render the documentation into a single page that uses scrollspy, or it can render the documentation on

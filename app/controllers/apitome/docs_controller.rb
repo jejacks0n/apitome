@@ -31,6 +31,7 @@ class Apitome::DocsController < ActionController::Base
   end
 
   def formatted_readme
+    return unless Apitome.configuration.readme
     file = Apitome.configuration.root.join(Apitome.configuration.doc_path, Apitome.configuration.readme)
     Kramdown::Document.new(file_for(file)).to_html
   end

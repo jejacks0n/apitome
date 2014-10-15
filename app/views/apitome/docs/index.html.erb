@@ -1,6 +1,8 @@
-<section class="readme" id="readme">
-  <article>
-    <%= raw formatted_readme %>
-  </article>
-</section>
+<% if Apitome.configuration.readme %>
+  <section class="readme" id="readme">
+    <article>
+      <%= raw formatted_readme %>
+    </article>
+  </section>
+<% end %>
 <%= render 'all_examples' if Apitome.configuration.single_page %>
