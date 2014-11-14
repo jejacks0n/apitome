@@ -79,12 +79,15 @@ pre code {
   font-size: 90%;
 }
 
+body.single-page h2 {
+  padding-top: 25px;
+  margin-bottom: -35px;
+}
 body.single-page .docs-section section.readme article {
-  margin-top: -50px;
-  margin-bottom: -20px;
+  margin-top: -60px;
 }
 body.single-page .docs-section section article {
-  padding-top: 50px;
+  padding-top: 60px;
 }
 
 @media screen and (min-width: 992px) {
