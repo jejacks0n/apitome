@@ -9,7 +9,7 @@ body {
 
 h1,
 h2 {
-  margin-top: 30px;
+  margin-top: 20px;
 }
 pre {
   background: #fcfbf9;
@@ -79,15 +79,28 @@ pre code {
   font-size: 90%;
 }
 
-body.single-page h2 {
+body.single-page .docs-section > section {
+  padding-top: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+body.single-page .docs-section > section h1 {
   padding-top: 25px;
-  margin-bottom: -35px;
+  margin-bottom: -45px;
 }
-body.single-page .docs-section section.readme article {
-  margin-top: -60px;
-}
-body.single-page .docs-section section article {
+body.single-page .docs-section > section article {
   padding-top: 60px;
+}
+
+body.single-page .docs-section > section.readme {
+  padding-top: 0;
+}
+body.single-page .docs-section > section.readme h1 {
+  padding-top: 0;
+  margin-bottom: 0;
+}
+body.single-page .docs-section > section.readme article {
+  margin-top: -52px;
 }
 
 @media screen and (min-width: 992px) {

@@ -1,4 +1,4 @@
-<h3><%= example['description'] %></h3>
+<h2><%= example['description'] %></h2>
 
 <%= render partial: 'apitome/docs/explanation',    locals: {explaination: example['explanation']} if example['explanation'] %>
 <%= render partial: 'apitome/docs/params',         locals: {params: example['parameters']} if example['parameters'].size > 0 %>
