@@ -1,6 +1,7 @@
 <h2><%= example['description'] %></h2>
 
 <%= render partial: 'apitome/docs/explanation',    locals: {explaination: example['explanation']} if example['explanation'] %>
+<%= render partial: 'apitome/docs/endpoint',       locals: {method: example['http_method'], endpoint: example['route']} %>
 <%= render partial: 'apitome/docs/params',         locals: {params: example['parameters']} if example['parameters'].size > 0 %>
 
 <% example['requests'].each_with_index do |request, index| %>
