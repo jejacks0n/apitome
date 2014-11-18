@@ -9,4 +9,5 @@ en:
   response: Response
   response_fields: Response Fields
   route: Route
+  endpoint: Endpoint
   status: Status
