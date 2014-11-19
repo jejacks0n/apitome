@@ -8,4 +8,5 @@ es:
   request: Solicitud
   response: Respuesta
   route: Ruta
+  endpoint: Punto de llegada
   status: Estado
