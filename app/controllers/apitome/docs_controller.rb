@@ -12,8 +12,8 @@ class Apitome::DocsController < ActionController::Base
 
   def simulate
     request = example['requests'][0]
-    self.headers = request['response_headers']
-    render json: request['response_body'], status: request['response_status']
+    request['response_headers'].each { |k, v| self.headers[k] = v }
+    render text: request['response_body'], status: request['response_status']
   end
 
   private
