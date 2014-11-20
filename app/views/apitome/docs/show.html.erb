@@ -1,2 +1,2 @@
 <h1 class="resource-name"><%= example['resource'] %></h1>
-<%= render 'example' %>
+<%= render 'example', locals: { example: example, link: example['link'].gsub('.json', '') } %>

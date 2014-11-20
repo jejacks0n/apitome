@@ -17,10 +17,11 @@
 
     <h3><%= t(:response) %></h3>
     <div class="response">
-      <%= render partial: 'apitome/docs/response_fields',   locals: {params: example['response_fields']}  if example['response_fields'].size > 0 %>
-      <%= render partial: 'apitome/docs/status',   locals: {request: request, index: index} %>
-      <%= render partial: 'apitome/docs/headers',  locals: {request: request, index: index, headers: request['response_headers']} %>
-      <%= render partial: 'apitome/docs/body',     locals: {request: request, index: index, body: request['response_body'], type: request['response_content_type']} if request['response_body'] %>
+      <%= link_to('Simulated Response', "#{Apitome.configuration.mount_at}/simulate/#{link}") %>
+      <%= render partial: 'apitome/docs/response_fields', locals: {params: example['response_fields']} if example['response_fields'].size > 0 %>
+      <%= render partial: 'apitome/docs/status',          locals: {request: request, index: index} %>
+      <%= render partial: 'apitome/docs/headers',         locals: {request: request, index: index, headers: request['response_headers']} %>
+      <%= render partial: 'apitome/docs/body',            locals: {request: request, index: index, body: request['response_body'], type: request['response_content_type']} if request['response_body'] %>
     </div>
   </div>
 <% end %>

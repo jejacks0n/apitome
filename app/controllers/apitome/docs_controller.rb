@@ -10,6 +10,12 @@ class Apitome::DocsController < ActionController::Base
   def show
   end
 
+  def simulate
+    request = example['requests'][0]
+    self.headers = request['response_headers']
+    render json: request['response_body'], status: request['response_status']
+  end
+
   private
 
   def file_for(file)

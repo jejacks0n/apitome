@@ -2,8 +2,9 @@
   <section class="example" id="<%= id_for(resource['name']) %>">
     <h1 class="resource-name"><%= resource['name'] %></h1>
     <% resource['examples'].each do |example| %>
-      <article id="<%= id_for(example['link'].gsub('.json', '')) %>">
-        <%= render partial: 'example', locals: { example: set_example(example['link'].gsub('.json', '')) } %>
+      <% link = example['link'].gsub('.json', '') %>
+      <article id="<%= id_for(link) %>">
+        <%= render partial: 'example', locals: { example: set_example(link), link: link } %>
       </article>
     <% end %>
   </section>
