@@ -2,7 +2,7 @@ class Apitome::DocsController < ActionController::Base
 
   layout Apitome.configuration.layout
 
-  helper_method :resources, :example, :formatted_body, :param_headers, :param_extras, :formatted_readme, :set_example, :id_for
+  helper_method :resources, :example, :formatted_body, :param_headers, :param_extras, :formatted_readme, :set_example, :id_for, :rendered_markdown
 
   def index
   end
@@ -38,10 +38,14 @@ class Apitome::DocsController < ActionController::Base
 
   def formatted_readme
     file = Apitome.configuration.root.join(Apitome.configuration.doc_path, Apitome.configuration.readme)
+    rendered_markdown(file_for(file))
+  end
+
+  def rendered_markdown(string)
     if defined?(GitHub::Markdown)
-      GitHub::Markdown.render_gfm(file_for(file))
+      GitHub::Markdown.render(string)
     else
-      Kramdown::Document.new(file_for(file)).to_html
+      Kramdown::Document.new(string).to_html
     end
   end
 
