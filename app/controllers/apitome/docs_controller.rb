@@ -75,7 +75,7 @@ class Apitome::DocsController < ActionController::Base
   end
 
   def id_for(str)
-    str.gsub(/\.json$/, '').underscore.gsub(/[^0-9a-z]+/i, '-')
+    Apitome.configuration.url_formatter.call(str)
   end
 
 end

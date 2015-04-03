@@ -101,6 +101,11 @@ After installation, your app will have an apitome initializer (app/config/initia
   Apitome can render the documentation into a single page that uses scrollspy, or it can render the documentation on individual pages on demand. This allows you to specify which one you want, as a single page may impact performance.<br/>
 
   <b>default:</b> <code>true</code>
+
+<dt> url_formatter </dt><dd>
+  You can specify how urls are formatted using a Proc or other callable object.<br/>
+
+  <b>default:</b> <code>-> (str) { str.gsub(/\.json$/, '').underscore.gsub(/[^0-9a-z]+/i, '-') }</code>
 </dd>
 
 

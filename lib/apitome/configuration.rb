@@ -4,7 +4,7 @@ module Apitome
   class Configuration
     include Singleton
 
-    cattr_accessor :mount_at, :root, :doc_path, :title, :layout, :code_theme, :css_override, :js_override, :readme, :single_page
+    cattr_accessor :mount_at, :root, :doc_path, :title, :layout, :code_theme, :css_override, :js_override, :readme, :single_page, :url_formatter
     @@mount_at     = "/api/docs"
     @@root         = nil # will default to Rails.root if left unset
     @@doc_path     = 'doc/api'
@@ -15,6 +15,7 @@ module Apitome
     @@js_override  = nil
     @@readme       = '../api.md'
     @@single_page  = true
+    @@url_formatter = -> (str) { str.gsub(/\.json$/, '').underscore.gsub(/[^0-9a-z]+/i, '-') }
 
     def self.root=(path)
       @@root = Pathname.new(path.to_s) if path.present?
