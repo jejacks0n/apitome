@@ -103,7 +103,7 @@ After installation, your app will have an apitome initializer (app/config/initia
   <b>default:</b> <code>true</code>
 
 <dt> url_formatter </dt><dd>
-  You can specify how urls are formatted using a Proc or other callable object.<br/>
+  You can specify how urls are formatted using a Proc or other callable object.  Your proc will be called with a resource name or link, giving you the opportunity to modify it as necessary for in the documentation url.<br/>
 
   <b>default:</b> <code>-> (str) { str.gsub(/\.json$/, '').underscore.gsub(/[^0-9a-z]+/i, '-') }</code>
 </dd>

@@ -42,6 +42,7 @@ Apitome.setup do |config|
   config.single_page = true
 
   # You can specify how urls are formatted using a Proc or other callable object.
+  # Your proc will be called with a resource name or link, giving you the opportunity to modify it as necessary for in the documentation url.
   config.url_formatter = -> (str) { str.gsub(/\.json$/, '').underscore.gsub(/[^0-9a-z\:]+/i, '-') }
 
 end
