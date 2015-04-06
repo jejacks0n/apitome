@@ -41,4 +41,7 @@ Apitome.setup do |config|
   # individual pages on demand. This allows you to specify which one you want, as a single page may impact performance.
   config.single_page = true
 
+  # You can specify how urls are formatted using a Proc or other callable object.
+  config.url_formatter = -> (str) { str.gsub(/\.json$/, '').underscore.gsub(/[^0-9a-z\:]+/i, '-') }
+
 end
