@@ -19,7 +19,5 @@ module Apitome
         end
       end
     end
-
   end
 end
-

@@ -1,7 +1,7 @@
-require 'apitome/version'
-require 'apitome/exceptions'
-require 'apitome/configuration'
+require "kramdown"
 
-require 'apitome/engine'
+require "apitome/version"
+require "apitome/exceptions"
+require "apitome/configuration"
 
-require 'kramdown'
+require "apitome/engine"

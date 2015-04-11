@@ -1,8 +1,17 @@
 class Apitome::DocsController < ActionController::Base
-
   layout Apitome.configuration.layout
 
-  helper_method :resources, :example, :formatted_body, :param_headers, :param_extras, :formatted_readme, :set_example, :id_for, :rendered_markdown
+  helper_method *[
+    :resources,
+    :example,
+    :formatted_body,
+    :param_headers,
+    :param_extras,
+    :formatted_readme,
+    :set_example,
+    :id_for,
+    :rendered_markdown
+  ]
 
   def index
   end
@@ -11,14 +20,13 @@ class Apitome::DocsController < ActionController::Base
   end
 
   def simulate
-    request = example['requests'][0]
+    request = example["requests"][0]
     if request
-      request['response_headers'].each { |k, v| self.headers[k] = v }
-      render text: request['response_body'], status: request['response_status']
+      request["response_headers"].each { |k, v| headers[k] = v }
+      render text: request["response_body"], status: request["response_status"]
     else
-      render text: 'No simulation for this endpoint', status: 404
+      render text: "No simulation for this endpoint", status: 404
     end
-
   end
 
   private
@@ -30,7 +38,7 @@ class Apitome::DocsController < ActionController::Base
   end
 
   def resources
-    @resources ||= JSON.parse(file_for('index.json'))['resources']
+    @resources ||= JSON.parse(file_for("index.json"))["resources"]
   end
 
   def example
@@ -69,18 +77,16 @@ class Apitome::DocsController < ActionController::Base
   def param_headers(params)
     titles = %w{Name Description}
     titles += param_extras(params)
+    titles
   end
 
   def param_extras(params)
-    extras = []
-    for param in params
-      extras += param.reject{ |k,v| %w{name description required scope}.include?(k) }.keys
-    end
-    extras.uniq
+    params.map do |param|
+      param.reject { |k, _v| %w{name description required scope}.include?(k) }.keys
+    end.flatten.uniq
   end
 
   def id_for(str)
-    str.gsub(/\.json$/, '').underscore.gsub(/[^0-9a-z]+/i, '-')
+    str.gsub(/\.json$/, "").underscore.gsub(/[^0-9a-z]+/i, "-")
   end
-
 end
