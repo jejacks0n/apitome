@@ -1,7 +1,7 @@
 Apitome
 =======
 
-[![Gem Version](https://badge.fury.io/rb/apitome.png)](http://badge.fury.io/rb/apitome)
+[![Gem Version](https://img.shields.io/gem/v/apitome.svg)](https://rubygems.org/gems/apitome)
 [![Dependency Status](https://gemnasium.com/modeset/apitome.svg)](https://gemnasium.com/modeset/apitome)
 [![Build Status](https://img.shields.io/travis/modeset/apitome.svg)](https://travis-ci.org/modeset/apitome)
 [![Code Climate](https://img.shields.io/codeclimate/github/modeset/apitome.svg)](https://codeclimate.com/github/modeset/apitome)
