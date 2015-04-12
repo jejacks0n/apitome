@@ -49,82 +49,9 @@ You can view your documentation at the default `api/docs` route.
 
 ## Configuration
 
-After installation, your app will have an apitome initializer (app/config/initializers/apitome.rb). You will find the
-following parameters that can be used to customize apitome. Note: Restart rails after changing any of these parameters.
-
-<dl>
-
-<dt> mount_at </dt><dd>
-  This determines where the Apitome routes will be mounted. Changing this to "/api/documentation" for instance would
-  allow you to browse to http://localhost:3000/api/documentation to see your api documentation. Set to nil and mount it
-  yourself if you need to.<br/>
-
-  <b>default:</b> <code>"/api/docs"</code>
-</dd>
-
-<dt> root </dt><dd>
-  This defaults to Rails.root if left nil. If you're providing documentation for an engine using a dummy application it
-  can be useful to set this to your engines root.. E.g. <code>Application::Engine.root</code><br/>
-
-  <b>default:</b> <code>nil</code>
-</dd>
-
-<dt> doc_path </dt><dd>
-  This is where rspec_api_documentation outputs the JSON files. This is configurable within RAD, and so is configurable
-  here.<br/>
-
-  <b>default:</b> <code>"doc/api"</code>
-</dd>
-
-<dt> title </dt><dd>
-  The title of the documentation -- If your project has a name, you'll want to put it here.<br/>
-
-  <b>default:</b> <code>"Apitome Documentation"</code>
-</dd>
-
-<dt> layout </dt><dd>
-  The main layout view for all documentation pages. By default this is pretty basic, but you may want to use your own
-  application layout.<br/>
-
-  <b>default:</b> <code>"apitome/application"</code>
-</dd>
-
-<dt> code_theme </dt><dd>
-  We're using [highlight.js](https://github.com/isagalaev/highlight.js) for code highlighting, and it comes with some
-  great themes. You can check [here for themes](http://softwaremaniacs.org/media/soft/highlight/test.html), and enter
-  the theme as lowercase/underscore.<br/>
-
-  <b>default:</b> <code>"default"</code>
-</dd>
-
-<dt> css_override </dt><dd>
-  This allows you to override the css manually. You typically want to require `apitome/application` within the override,
-  but if you want to override it entirely you can do so.<br/>
-
-  <b>default:</b> <code>nil</code>
-</dd>
-
-<dt> js_override </dt><dd>
-  This allows you to override the javascript manually. You typically want to require `apitome/application` within the
-  override, but if you want to override it entirely you can do so.<br/>
-
-  <b>default:</b> <code>nil</code>
-</dd>
-
-<dt> readme </dt><dd>
-  You can provide a "README" style markdown file for the documentation, which is a useful place to include general
-  information. This path is relative to your doc_path configuration.<br/>
-
-  <b>default:</b> <code>"../api.md"</code>
-</dd>
-
-<dt> single_page </dt><dd>
-  Apitome can render the documentation into a single page that uses scrollspy, or it can render the documentation on
-  individual pages on demand. This allows you to specify which one you want, as a single page may impact
-  performance.<br/>
-
-  <b>default:</b> <code>true</code>
-</dd>
+When you install Apitime an initializer file (app/config/initializers/apitome.rb) is generated that contains good
+documentation for each configuration directive. Otherwise you can get a refresher by checking the
+[Apitome Configuration](https://github.com/modeset/apitome/wiki/Apitome-Configuration) article.
 
 
 ## Customization
