@@ -11,6 +11,7 @@ group :development, :test do
   gem "rspec-rails"
   gem "capybara"
   gem "aruba"
+  gem "selenium-webdriver"
 
   # io services
   gem "rubocop", require: false

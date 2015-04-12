@@ -9,6 +9,7 @@ require "apitome"
 
 require "rspec/rails"
 require "capybara/rails"
+require "aruba/api"
 
 require "fileutils"
 require "ostruct"
@@ -18,6 +19,7 @@ Dir[File.expand_path("../support/**/*.rb", __FILE__)].each { |f| require f }
 RSpec.configure do |config|
   config.order = "random"
   config.include Rack::Test::Methods
+  config.include Aruba::Api
 
   config.before(:each, shell: true) do
     @aruba_timeout_seconds = 180
