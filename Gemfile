@@ -19,6 +19,11 @@ group :development, :test do
   gem "byebug"
   gem "web-console"
   gem "sqlite3"
+  gem "coffee-rails"
+  gem "sass-rails"
+  gem "jquery-rails"
+  gem "uglifier"
+  gem "turbolinks"
 
   # io services
   gem "rubocop", require: false
