@@ -13,6 +13,13 @@ group :development, :test do
   gem "aruba"
   gem "selenium-webdriver"
 
+  # for local bundle installs
+  gem "jbuilder"
+  gem "sdoc"
+  gem "byebug"
+  gem "web-console"
+  gem "sqlite3"
+
   # io services
   gem "rubocop", require: false
   gem "codeclimate-test-reporter", require: false
