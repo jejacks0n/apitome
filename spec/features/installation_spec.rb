@@ -8,7 +8,7 @@ feature "Installation", shell: true do
     cd("testapp")
 
     append_to_file("Gemfile", %{\ngem 'apitome', path: '../../../'\n})
-    run_simple("bundle install --local")
+    run_simple("bundle install#{!ENV["TRAVIS"] ? ' --local' : ''}")
   end
 
   it "installs the base files" do
