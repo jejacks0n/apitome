@@ -51,13 +51,13 @@ end
 # Apitome
 # -----------------------------------------------------------------------------
 namespace :apitome do
-  env  = Rails.application.assets
-  root = Apitome::Engine.root.join("app/assets")
-
   task build: ["build:javascripts", "build:stylesheets"]
 
   desc "Combine and bundle javascripts"
   task javascripts: :environment do
+    env  = Rails.application.assets
+    root = Apitome::Engine.root.join("app/assets")
+
     puts "Building javascripts..."
 
     asset = env.find_asset("apitome/application.js")
@@ -65,6 +65,9 @@ namespace :apitome do
   end
 
   task stylesheets: :environment do
+    env  = Rails.application.assets
+    root = Apitome::Engine.root.join("app/assets")
+
     puts "Building stylesheets..."
 
     asset = env.find_asset("apitome/application.css")

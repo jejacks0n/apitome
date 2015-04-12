@@ -3,7 +3,7 @@ module Apitome
     isolate_namespace Apitome
 
     if config.respond_to? (:assets)
-      config.assets.precompile += %w( apitome/*.css apitome/*.js )
+      config.assets.precompile += %w{apitome/*.css apitome/*.js}
     end
 
     initializer :assets, group: :all do |app|

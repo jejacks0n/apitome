@@ -1,9 +1,5 @@
-require "singleton"
-
 module Apitome
   class Configuration
-    include Singleton
-
     cattr_accessor *[
       :mount_at,
       :root,
