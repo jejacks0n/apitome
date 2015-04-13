@@ -10,7 +10,8 @@ module Apitome
       :css_override,
       :js_override,
       :readme,
-      :single_page
+      :single_page,
+      :url_formatter
     ]
 
     @@mount_at     = "/api/docs"
