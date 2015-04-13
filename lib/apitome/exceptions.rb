@@ -1,3 +1,7 @@
 module Apitome
-  class FileNotFound < Exception; end
+  class Error < StandardError
+  end
+
+  class FileNotFoundError < Apitome::Error
+  end
 end

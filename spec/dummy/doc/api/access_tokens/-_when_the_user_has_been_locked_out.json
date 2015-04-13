@@ -1,0 +1,69 @@
+{
+  "resource": "Access Tokens",
+  "http_method": "POST",
+  "route": "/api/oauth/token",
+  "description": "- When the user has been locked out",
+  "parameters": [
+    {
+      "required": true,
+      "name": "client_id",
+      "description": "Client ID (as provided)"
+    },
+    {
+      "required": true,
+      "name": "client_secret",
+      "description": "Client Secret (as provided)"
+    },
+    {
+      "required": true,
+      "Expected": "password",
+      "name": "grant_type",
+      "description": "Grant Type"
+    },
+    {
+      "required": true,
+      "name": "email",
+      "description": "Email address"
+    },
+    {
+      "required": true,
+      "name": "password",
+      "description": "Password"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "POST",
+      "request_path": "/api/oauth/token",
+      "request_body": "{\"client_id\":\"04e83c5f62d57a5458c8fd970cf499677156274ab02895cf8dabcc6e07beb2b1\",\"client_secret\":\"5c49359ffdc9b5ee6914716e573f9916ad6cbac1c13f4863a9082dcfdc7dab07\",\"grant_type\":\"password\",\"email\":\"sterling@isisagency.com\",\"password\":\"lanaisawesome\"}",
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Host": "example.com",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 401,
+      "response_status_text": "Unauthorized",
+      "response_body": "{\"errors\":{\"status\":\"401\",\"title\":\"No dice. Account has been locked.\",\"code\":\"locked_out\"}}",
+      "response_headers": {
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-XSS-Protection": "1; mode=block",
+        "X-Content-Type-Options": "nosniff",
+        "Cache-Control": "no-store",
+        "Pragma": "no-cache",
+        "Content-Type": "application/json; charset=utf-8",
+        "WWW-Authenticate": "Bearer realm=\"Example\", error=\"locked_out\", error_description=\"No dice. Account has been locked.\"",
+        "X-Request-Id": "d51a737f-c6a1-433c-beeb-2fe6689ab3e1",
+        "X-Runtime": "0.003804",
+        "Content-Length": "91"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": null
+    }
+  ]
+}

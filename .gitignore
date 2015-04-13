@@ -1,12 +1,9 @@
-.bundle/
 log/*.log
 pkg/
-spec/dummy/db/*.sqlite3
-spec/dummy/db/*.sqlite3-journal
 spec/dummy/log/*.log
 spec/dummy/tmp/
+coverage
 spec/dummy/.sass-cache
 Gemfile.lock
-spec/dummy/doc/api
 .ruby-version
 .ruby-gemset

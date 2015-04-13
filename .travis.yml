@@ -1,0 +1,8 @@
+rvm:
+  - 2.2.0
+before_script:
+  - sh -e /etc/init.d/xvfb start
+env:
+  global:
+    - TRAVIS=true
+    - DISPLAY=:99.0
