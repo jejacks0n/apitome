@@ -39,4 +39,8 @@ Apitome.setup do |config|
   # Apitome can render the documentation into a single page that uses scrollspy, or it can render the documentation on
   # individual pages on demand. This allows you to specify which one you want, as a single page may impact performance.
   config.single_page = true
+
+  # You can specify how urls are formatted using a Proc or other callable object.
+  # Your proc will be called with a resource name or link, giving you the opportunity to modify it as necessary for in the documentation url.
+  config.url_formatter = -> (str) { str.gsub(/\.json$/, '').underscore.gsub(/[^0-9a-z\:]+/i, '-') }
 end

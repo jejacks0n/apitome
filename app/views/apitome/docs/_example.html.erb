@@ -17,7 +17,7 @@
 
     <h3><%= t(:response) %></h3>
     <div class="response">
-      <%= link_to('Simulated Response', "#{Apitome.configuration.mount_at}/simulate/#{link}") %>
+      <%= link_to('Simulated Response', "#{Apitome.configuration.mount_at}/simulate/#{example['link'].gsub('.json', '')}") if example['link'] %>
       <%= render partial: 'apitome/docs/response_fields', locals: {params: example['response_fields']} if example['response_fields'].size > 0 %>
       <%= render partial: 'apitome/docs/status',          locals: {request: request, index: index} %>
       <%= render partial: 'apitome/docs/headers',         locals: {request: request, index: index, headers: request['response_headers']} %>
