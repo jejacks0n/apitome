@@ -14,7 +14,7 @@ class Apitome::DocsController < ActionController::Base
   ]
 
   def index
-    @@doc_etag ||= Digest::MD5.hexdigest(Dir[Apitome.configuration.doc_path.join('**', '*.json')].collect do |file|
+    @@doc_etag ||= Digest::MD5.hexdigest(Dir[Pathname.new(Apitome.configuration.doc_path).join('**', '*.json')].collect do |file|
                      Digest::MD5.file(file).hexdigest
                    end.join)
     fresh_when etag: @@doc_etag
