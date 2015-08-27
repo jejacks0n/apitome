@@ -4,7 +4,7 @@
     <table class="table table-bordered">
       <tr>
         <% param_headers(params).each do |title| %>
-          <th><%= title %></th>
+          <th><%= title.titlecase %></th>
         <% end %>
       </tr>
       <% params.each do |param| %>
