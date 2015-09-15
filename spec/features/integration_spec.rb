@@ -84,7 +84,6 @@ feature "Reading in the browser", browser: true do
 
     expect(page).to have_text(<<-TEXT.strip_heredoc)
       Response
-      Simulated Response
 
       Status
       200
