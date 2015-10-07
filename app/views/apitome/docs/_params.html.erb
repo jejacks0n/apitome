@@ -1,7 +1,6 @@
 <section class="params">
   <h3><%= t(:parameters) %></h3>
   <div class="table-responsive">
-    <% binding.pry %>
     <table class="table table-bordered">
       <tr>
         <% param_headers(params).each do |title| %>
@@ -23,7 +22,7 @@
               <span class="label label-info unique">unique</span>
             <% end %>
             <% if param['limit'] %>
-              <span class="label label-info limit">limit: <%= param['limit'] %></span>
+              <span class="label label-warning limit">limit: <%= param['limit'] %></span>
             <% end %>
           </td>
           <td class="description"><%= param['description'] %></td>
