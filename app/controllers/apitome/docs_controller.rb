@@ -1,3 +1,5 @@
+require 'open-uri'
+
 class Apitome::DocsController < ActionController::Base
   layout Apitome.configuration.layout
 
@@ -31,10 +33,21 @@ class Apitome::DocsController < ActionController::Base
 
   private
 
-  def file_for(file)
-    file = Apitome.configuration.root.join(Apitome.configuration.doc_path, file)
-    raise Apitome::FileNotFoundError.new("Unable to find #{file}") unless File.exists?(file)
-    File.read(file)
+  def file_for(file, readme: false)
+    if Apitome.configuration.remote_docs
+      file = if readme
+        "#{file}"
+      else
+        "#{Apitome.configuration.doc_path}/#{file}"
+      end
+
+      file = "#{Apitome.configuration.remote_url}/#{file}"
+    else
+      file = Apitome.configuration.root.join(Apitome.configuration.doc_path, file)
+      raise Apitome::FileNotFoundError.new("Unable to find #{file}") unless File.exists?(file)
+    end
+
+    open(file).read
   end
 
   def resources
@@ -51,8 +64,7 @@ class Apitome::DocsController < ActionController::Base
 
   def formatted_readme
     return unless Apitome.configuration.readme
-    file = Apitome.configuration.root.join(Apitome.configuration.doc_path, Apitome.configuration.readme)
-    rendered_markdown(file_for(file))
+    rendered_markdown(file_for(Apitome.configuration.readme, readme: true))
   end
 
   def rendered_markdown(string)
