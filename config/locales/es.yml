@@ -7,6 +7,7 @@ es:
   readme: LEEME
   request: Solicitud
   response: Respuesta
+  response_fields: Campos de respuesta
   route: Ruta
   endpoint: Punto de llegada
   status: Estado
