@@ -43,4 +43,15 @@ Apitome.setup do |config|
   # You can specify how urls are formatted using a Proc or other callable object.
   # Your proc will be called with a resource name or link, giving you the opportunity to modify it as necessary for in the documentation url.
   config.url_formatter = -> (str) { str.gsub(/\.json$/, '').underscore.gsub(/[^0-9a-z\:]+/i, '-') }
+
+  # You can setup the docs to be loaded from a remote URL if they are
+  # not available in the application environment. This defaujlts to
+  # false.
+  config.remote_docs = false
+
+  # If the remote_docs is set to true, this URL is used as the base for
+  # the doc location. This should be the root of the doc location, where
+  # the readme is located. It uses the doc_path setting to build the
+  # URLs for the API documentation. This defaults to nil.
+  config.remote_url = nil
 end
