@@ -14,3 +14,19 @@ jQuery(function(){
   })
 });
 
+$(document).ready(function() {
+  $(window).scroll(function(){
+    if ($(this).scrollTop() > 1500) {
+      $('#scroll-to-top').removeClass('hidden').affix({
+        offset: { top:100 }
+      });
+    } else {
+      $('#scroll-to-top').addClass('hidden')
+    }
+  });
+  
+  $("#scroll-to-top").click(function(){
+    $('html, body').animate({scrollTop : 0},500);
+    return false;
+  });
+});
