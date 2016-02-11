@@ -1,13 +1,14 @@
 en:
   body: Body
   curl: cURL
+  endpoint: Endpoint
   headers: Headers
   parameters: Parameters
   query_parameters: Query Parameters
   readme: README
   request: Request
-  response: Response
+  required: required
   response_fields: Response Fields
+  response: Response
   route: Route
-  endpoint: Endpoint
   status: Status
