@@ -16,7 +16,7 @@
               <%= param['name'] %>
             <% end %>
             <% if param['required'] %>
-              <span class="label label-danger required">required</span>
+              <span class="label label-danger required"><%= t(:required) %></span>
             <% end %>
           </td>
           <td class="description"><%= param['description'] %></td>
