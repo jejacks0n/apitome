@@ -1,10 +1,6 @@
 require "spec_helper"
 
 feature "Reading in the browser", browser: true do
-  before do
-    visit "/api/docs"
-  end
-
   it "displays the configured title" do
     Apitome.configuration.title = "Test Documentation"
     visit "/api/docs"
@@ -107,5 +103,17 @@ feature "Reading in the browser", browser: true do
         "expires_in": 1800
       }
     TEXT
+  end
+
+  context "for a non-default doc path" do
+    before do
+      Apitome.configuration.title = "Test Documentation"
+    end
+
+    it "displays the expected docs" do
+      visit "/api/docs/v2"
+      expect(page).to have_text("Test Documentation (v2)")
+      expect(page).to have_text("Access Tokens (v2)")
+    end
   end
 end

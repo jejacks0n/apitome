@@ -1,0 +1,65 @@
+{
+  "resource": "Access Tokens",
+  "http_method": "POST",
+  "route": "/api/oauth/token",
+  "description": "User access token (refresh token)",
+  "explanation": "If you've already authenticated a user and been granted a [user access\ntoken](#access-tokens-user-access-token-password-), you've likely stored a refresh token. This refresh token can\nbe provided back to this endpoint to retrieve a valid fresh token.\n\nThis works the same as authenticating with user credentials, but allows for the client to only store the refresh\ntoken and not the user credentials directly. It's up to the client if the user email address is stored to simplify\nthe sign in process.",
+  "parameters": [
+    {
+      "required": true,
+      "name": "client_id",
+      "description": "Client ID (as provided)"
+    },
+    {
+      "required": true,
+      "name": "client_secret",
+      "description": "Client Secret (as provided)"
+    },
+    {
+      "required": true,
+      "Expected": "refresh_token",
+      "name": "grant_type",
+      "description": "Grant Type"
+    },
+    {
+      "required": true,
+      "name": "refresh_token",
+      "description": "Refresh token"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "POST",
+      "request_path": "/api/oauth/token",
+      "request_body": "{\"client_id\":\"04e83c5f62d57a5458c8fd970cf499677156274ab02895cf8dabcc6e07beb2b1\",\"client_secret\":\"5c49359ffdc9b5ee6914716e573f9916ad6cbac1c13f4863a9082dcfdc7dab07\",\"grant_type\":\"refresh_token\",\"refresh_token\":\"04e83c5f62d57a5458c8fd970cf499677156274ab02895cf8dabcc6e07beb2b1\"}",
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Host": "example.com",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "{\"access_token\":\"15a8db8cdb35b71f82bd6af4541f68edd8a1c946b8daacc540d50f88e4a1220f\",\"token_type\":\"bearer\",\"expires_in\":1800,\"refresh_token\":\"6d5fa21354df2a83f864b0bf87adfe34034d6769576a6df210c2dd6e119bb8bc\"}",
+      "response_headers": {
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-XSS-Protection": "1; mode=block",
+        "X-Content-Type-Options": "nosniff",
+        "Cache-Control": "no-store",
+        "Pragma": "no-cache",
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": "\"50b976d144dba8b47ab0b12c81ae6298\"",
+        "X-Request-Id": "49312d1f-a81c-4430-8bf0-1db28da1cf14",
+        "X-Runtime": "0.016604",
+        "Content-Length": "206"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": null
+    }
+  ]
+}

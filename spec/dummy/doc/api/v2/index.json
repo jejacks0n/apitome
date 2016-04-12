@@ -1,0 +1,34 @@
+{
+  "resources": [
+    {
+      "name": "Access Tokens (v2)",
+      "examples": [
+        {
+          "description": "Client access token (client credentials)",
+          "link": "access_tokens/client_access_token_(client_credentials).json",
+          "groups": "all"
+        },
+        {
+          "description": "User access token (password)",
+          "link": "access_tokens/user_access_token_(password).json",
+          "groups": "all"
+        },
+        {
+          "description": "- When the user credentials are invalid",
+          "link": "access_tokens/-_when_the_user_credentials_are_invalid.json",
+          "groups": "all"
+        },
+        {
+          "description": "- When the user has been locked out",
+          "link": "access_tokens/-_when_the_user_has_been_locked_out.json",
+          "groups": "all"
+        },
+        {
+          "description": "User access token (refresh token)",
+          "link": "access_tokens/user_access_token_(refresh_token).json",
+          "groups": "all"
+        }
+      ]
+    }
+  ]
+}

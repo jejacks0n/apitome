@@ -12,7 +12,8 @@ class Apitome::DocsController < ActionController::Base
     :formatted_readme,
     :set_example,
     :id_for,
-    :rendered_markdown
+    :rendered_markdown,
+    :doc_name
   ]
 
   def index
@@ -38,12 +39,17 @@ class Apitome::DocsController < ActionController::Base
       file = if readme
         "#{file}"
       else
-        "#{Apitome.configuration.doc_path}/#{file}"
+        "#{doc_path(doc_name)}/#{file}"
       end
 
       file = "#{Apitome.configuration.remote_url}/#{file}"
     else
-      file = Apitome.configuration.root.join(Apitome.configuration.doc_path, file)
+      file = if readme
+         Apitome.configuration.root.join(doc_path(:default), file)
+      else
+        Apitome.configuration.root.join(doc_path(doc_name), file)
+      end
+
       raise Apitome::FileNotFoundError.new("Unable to find #{file}") unless File.exists?(file)
     end
 
@@ -100,5 +106,17 @@ class Apitome::DocsController < ActionController::Base
 
   def id_for(str)
     Apitome.configuration.url_formatter.call(str)
+  end
+
+  def doc_path(name)
+    if Apitome.configuration.doc_path.is_a?(Hash)
+      Apitome.configuration.doc_path.with_indifferent_access[name]
+    else
+      Apitome.configuration.doc_path
+    end
+  end
+
+  def doc_name
+    params[:doc_name]
   end
 end
