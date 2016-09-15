@@ -18,7 +18,7 @@
           <% end %>
         </ul>
       <% else %>
-        <li><%= link_to resource['name'], "#{Apitome.configuration.mount_at}/#{resource['examples'].first['link'].gsub(/\.json$/, '')}" %></li>
+        <%= link_to resource['name'], "#{Apitome.configuration.mount_at}/#{resource['examples'].first['link'].gsub(/\.json$/, '')}" %>
         <ul class="nav">
           <% resource['examples'].each do |example| %>
             <li><%= link_to example['description'], "#{Apitome.configuration.mount_at}/#{example['link'].gsub(/\.json$/, '')}" %></li>
