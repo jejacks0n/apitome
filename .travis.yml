@@ -6,3 +6,5 @@ env:
   global:
     - TRAVIS=true
     - DISPLAY=:99.0
+before_install: 
+  - gem install bundler
