@@ -1,4 +1,4 @@
 <section class="query-parameters">
-  <h4><%= t(:query_parameters) %></h4>
+  <h4><%= t(:query_parameters, scope: :apitome) %></h4>
   <pre><%= request['request_query_parameters'].map{ |k,v| "#{k}=#{v}" }.join("\n") %></pre>
 </section>

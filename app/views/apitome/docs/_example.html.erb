@@ -6,7 +6,7 @@
 
 <% example['requests'].each_with_index do |request, index| %>
   <div id="<%= "request-#{index}" %>">
-    <h3><%= t(:request) %></h3>
+    <h3><%= t(:request, scope: :apitome) %></h3>
     <div class="request">
       <%= render partial: 'apitome/docs/route',    locals: {request: request, index: index} %>
       <%= render partial: 'apitome/docs/headers',  locals: {request: request, index: index, headers: request['request_headers']} %>
@@ -15,7 +15,7 @@
       <%= render partial: 'apitome/docs/curl',     locals: {request: request, index: index} if request['curl'] %>
     </div>
 
-    <h3><%= t(:response) %></h3>
+    <h3><%= t(:response, scope: :apitome) %></h3>
     <div class="response">
       <%= link_to('Simulated Response', "#{Apitome.configuration.mount_at}/simulate/#{link}") unless link.empty? %>
       <%= render partial: 'apitome/docs/response_fields', locals: {params: example['response_fields']} if example['response_fields'].size > 0 %>

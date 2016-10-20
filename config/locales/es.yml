@@ -1,14 +1,15 @@
 es:
-  body: Cuerpo
-  curl: cURL
-  endpoint: Punto de llegada
-  headers: Encabezados
-  parameters: Parametros
-  query_parameters: Parámetros de la consulta
-  readme: LEEME
-  request: Solicitud
-  required: requerido
-  response_fields: Campos de respuesta
-  response: Respuesta
-  route: Ruta
-  status: Estado
+  apitome:
+    body: Cuerpo
+    curl: cURL
+    endpoint: Punto de llegada
+    headers: Encabezados
+    parameters: Parametros
+    query_parameters: Parámetros de la consulta
+    readme: LEEME
+    request: Solicitud
+    required: requerido
+    response_fields: Campos de respuesta
+    response: Respuesta
+    route: Ruta
+    status: Estado

@@ -1,14 +1,15 @@
 en:
-  body: Body
-  curl: cURL
-  endpoint: Endpoint
-  headers: Headers
-  parameters: Parameters
-  query_parameters: Query Parameters
-  readme: README
-  request: Request
-  required: required
-  response_fields: Response Fields
-  response: Response
-  route: Route
-  status: Status
+  apitome:
+    body: Body
+    curl: cURL
+    endpoint: Endpoint
+    headers: Headers
+    parameters: Parameters
+    query_parameters: Query Parameters
+    readme: README
+    request: Request
+    required: required
+    response_fields: Response Fields
+    response: Response
+    route: Route
+    status: Status
