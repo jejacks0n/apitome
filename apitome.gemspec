@@ -13,6 +13,7 @@ Gem::Specification.new do |s|
   s.homepage    = "https://github.com/modeset/apitome"
   s.summary     = "Apitome: /iˈpitəmē/ An API documentation reader RSpec API Documentation"
   s.description = "API documentation renderer for Rails using RSpec API Documentation JSON output"
+  s.license     = "MIT"
 
   s.files       = Dir["{app,config,lib,vendor}/**/*"] + ["MIT.LICENSE", "README.md"]
   s.test_files  = Dir["{spec}/**/*"]
