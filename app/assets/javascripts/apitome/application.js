@@ -14,7 +14,13 @@ jQuery(function(){
   })
 });
 
+function setColorToActiveLink() {
+  var path = window.location.pathname;
+  $("a[href='" + path + "']").css({"background-color" : "#973DA0", "color" : "whitesmoke"});
+}
+
 $(document).ready(function() {
+  setColorToActiveLink();
   $(window).scroll(function(){
     if ($(this).scrollTop() > 1500) {
       $('#scroll-to-top').removeClass('hidden').affix({

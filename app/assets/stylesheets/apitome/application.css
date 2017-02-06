@@ -136,8 +136,8 @@ body.single-page .docs-section > section.readme article {
 }
 
 .sidebar {
-  overflow: auto;
-  /*max-height: 550px;*/
+  overflow: visible;
+  max-height: 100%;
 }
 
 #scroll-to-top.affix {
