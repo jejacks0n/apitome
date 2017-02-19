@@ -19,6 +19,6 @@ Gem::Specification.new do |s|
   s.test_files  = Dir["{spec}/**/*"]
 
   s.add_dependency "railties"
-  s.add_dependency "rspec_api_documentation"
+  s.add_development_dependency "rspec_api_documentation"
   s.add_dependency "kramdown"
 end
