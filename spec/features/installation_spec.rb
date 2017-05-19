@@ -4,7 +4,7 @@ feature "Installation", shell: true do
   before do
     unset_bundler_env_vars
 
-    run_simple("bundle exec rails new testapp --skip-bundle --skip-activerecord")
+    run_simple("rails new testapp")
     cd("testapp")
 
     append_to_file("Gemfile", %{\ngem 'apitome', path: '../../../'\n})
