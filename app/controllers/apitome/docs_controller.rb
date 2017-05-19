@@ -94,7 +94,7 @@ class Apitome::DocsController < ActionController::Base
 
   def param_extras(params)
     params.map do |param|
-      param.reject { |k, _v| %w{name description required scope}.include?(k) }.keys
+      param.reject { |k, _v| %w{name description required scope unique}.include?(k) }.keys
     end.flatten.uniq
   end
 

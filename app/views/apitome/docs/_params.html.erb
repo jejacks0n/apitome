@@ -18,6 +18,9 @@
             <% if param['required'] %>
               <span class="label label-danger required"><%= t(:required, scope: :apitome) %></span>
             <% end %>
+            <% if param['unique'] %>
+              <span class="label label-info unique">unique</span>
+            <% end %>
           </td>
           <td class="description"><%= param['description'] %></td>
           <% param_extras(params).each do |extra| %>
