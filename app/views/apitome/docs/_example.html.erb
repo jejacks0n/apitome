@@ -17,7 +17,7 @@
 
     <h3><%= t(:response, scope: :apitome) %></h3>
     <div class="response">
-      <%= link_to('Simulated Response', "#{apitome.root_path}simulate/#{link}") unless link.empty? %>
+      <%= link_to('Simulated Response', apitome_engine.simulated_path(link)) unless link.empty? %>
       <%= render partial: 'apitome/docs/response_fields', locals: {params: example['response_fields']} if example['response_fields'].size > 0 %>
       <%= render partial: 'apitome/docs/status',          locals: {request: request, index: index} %>
       <%= render partial: 'apitome/docs/headers',         locals: {request: request, index: index, headers: request['response_headers']} %>
