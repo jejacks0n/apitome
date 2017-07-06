@@ -24,10 +24,11 @@ class Apitome::DocsController < ActionController::Base
   def simulate
     request = example["requests"][0]
     if request
+      request["response_headers"].delete('Content-Length')
       request["response_headers"].each { |k, v| headers[k] = v }
-      render plain: request["response_body"], status: request["response_status"]
+      render body: request["response_body"], status: request["response_status"]
     else
-      render plain: "No simulation for this endpoint", status: 404
+      render body: "No simulation for this endpoint", status: 404
     end
   end
 
