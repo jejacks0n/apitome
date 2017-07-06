@@ -25,9 +25,9 @@ class Apitome::DocsController < ActionController::Base
     request = example["requests"][0]
     if request
       request["response_headers"].each { |k, v| headers[k] = v }
-      render text: request["response_body"], status: request["response_status"]
+      render plain: request["response_body"], status: request["response_status"]
     else
-      render text: "No simulation for this endpoint", status: 404
+      render plain: "No simulation for this endpoint", status: 404
     end
   end
 
