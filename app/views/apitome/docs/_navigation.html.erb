@@ -11,7 +11,7 @@
   <% resources.each do |resource| %>
     <li>
       <% if Apitome.configuration.single_page %>
-        <a href="#<%= id_for(resource['examples'].first['link']) %>"><%= resource['name'] %></a>
+        <a href="#<%= id_for(resource['name']) %>"><%= resource['name'] %></a>
         <ul class="nav">
           <% resource['examples'].each do |example| %>
             <li><%= link_to example['description'], "##{id_for(example['link'])}" %></li>
