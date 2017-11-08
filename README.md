@@ -71,6 +71,12 @@ After installation, your app will have an apitome initializer (app/config/initia
   <b>default:</b> <code>"doc/api"</code>
 </dd>
 
+<dt> parent_controller </dt><dd>
+  Set a parent controller that Apitome::DocsController inherits from. Useful if you want to use a custom `before_action`.<br/>
+
+  <b>default:</b> <code>"ActionController::Base"</code>
+</dd>
+
 <dt> title </dt><dd>
   The title of the documentation -- If your project has a name, you'll want to put it here.<br/>
 
