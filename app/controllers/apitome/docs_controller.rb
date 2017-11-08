@@ -1,6 +1,6 @@
 require 'open-uri'
 
-class Apitome::DocsController < ActionController::Base
+class Apitome::DocsController < Apitome.configuration.parent_controller.constantize
   layout Apitome.configuration.layout
 
   helper_method *[
