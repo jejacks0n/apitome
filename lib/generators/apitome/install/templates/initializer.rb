@@ -12,6 +12,10 @@ Apitome.setup do |config|
   # configurable here.
   config.doc_path = "doc/api"
 
+  # Set a parent controller that Apitome::DocsController inherits from. Useful if you want to use a custom
+  # `before_action`.
+  config.parent_controller = "ActionController::Base"
+
   # The title of the documentation -- If your project has a name, you'll want to put it here.
   config.title = "Apitome Documentation"
 
