@@ -13,6 +13,7 @@ module Apitome
       :readme,
       :single_page,
       :remote_docs,
+      :simulate_response,
       :remote_url,
       :url_formatter
     ]
@@ -29,6 +30,7 @@ module Apitome
     @@readme            = "../api.md"
     @@single_page       = true
     @@remote_docs       = false
+    @@simulate_response = true
     @@remote_url        = nil
     @@url_formatter     = -> (str) { str.gsub(/\.json$/, '').underscore.gsub(/[^0-9a-z]+/i, '-') }
 

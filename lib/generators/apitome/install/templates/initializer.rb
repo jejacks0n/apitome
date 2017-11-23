@@ -49,7 +49,7 @@ Apitome.setup do |config|
   config.url_formatter = -> (str) { str.gsub(/\.json$/, '').underscore.gsub(/[^0-9a-z\:]+/i, '-') }
 
   # You can setup the docs to be loaded from a remote URL if they are
-  # not available in the application environment. This defaujlts to
+  # not available in the application environment. This defaults to
   # false.
   config.remote_docs = false
 
@@ -58,4 +58,7 @@ Apitome.setup do |config|
   # the readme is located. It uses the doc_path setting to build the
   # URLs for the API documentation. This defaults to nil.
   config.remote_url = nil
+
+  # You can configure to show simulate response link for response, default to true
+  config.simulate_response = true
 end
