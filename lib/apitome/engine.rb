@@ -2,12 +2,14 @@ module Apitome
   class Engine < ::Rails::Engine
     isolate_namespace Apitome
 
-    if Apitome.configuration.precompile_assets == true && config.respond_to?(:assets)
+    if Apitome.configuration.precompile_assets && config.respond_to?(:assets)
       config.assets.precompile += %w{apitome/*.css apitome/*.js}
+    else
+      config.assets.precompile += %w{} # Have to set this to empty for it to work
     end
 
-    # config.assets.paths << root.join('assets', 'stylesheets').to_s
-    # config.assets.paths << root.join('assets', 'javascripts').to_s
+    config.assets.paths << root.join('assets', 'stylesheets').to_s
+    config.assets.paths << root.join('assets', 'javascripts').to_s
 
     initializer :assets, group: :all do |app|
       # default the root if it's not set
