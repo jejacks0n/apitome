@@ -123,6 +123,12 @@ After installation, your app will have an apitome initializer (app/config/initia
 
   <b>default:</b> <code>-> (str) { str.gsub(/\.json$/, '').underscore.gsub(/[^0-9a-z]+/i, '-') }</code>
 </dd>
+
+<dt> precompile_assets </dt><dd>
+  By default all assets that ship with this library are precompiled by the asset pipeline. If you would prefer to control this yourself, you can disable it by changing this to false.<br/>
+
+  <b>default:</b> <code>true</code>
+</dd>
 =======
 
 When you install Apitime an initializer file (app/config/initializers/apitome.rb) is generated that contains good
