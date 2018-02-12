@@ -15,7 +15,7 @@ module Apitome
       :remote_docs,
       :remote_url,
       :url_formatter,
-      :precompile
+      :precompile_assets
     ]
 
     @@mount_at          = "/api/docs"
