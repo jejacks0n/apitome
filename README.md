@@ -77,6 +77,12 @@ After installation, your app will have an apitome initializer (app/config/initia
   <b>default:</b> <code>"ActionController::Base"</code>
 </dd>
 
+<dt> logo_url </dt><dd>
+  This allows you to use a logo in your header.  If this isn't set, the header will just be the title text.<br/>
+
+  <b>default:</b> <code>nil</code>
+</dd>
+
 <dt> title </dt><dd>
   The title of the documentation -- If your project has a name, you'll want to put it here.<br/>
 
@@ -103,6 +109,12 @@ After installation, your app will have an apitome initializer (app/config/initia
 
 <dt> js_override </dt><dd>
   This allows you to override the javascript manually. You typically want to require `apitome/application` within the override, but if you want to override it entirely you can do so.<br/>
+
+  <b>default:</b> <code>nil</code>
+</dd>
+
+<dt> favicon_url </dt><dd>
+  This allows you to set a favicon_url. You typically want to require `apitome/application` within the override, but if you want to override it entirely you can do so.<br/>
 
   <b>default:</b> <code>nil</code>
 </dd>

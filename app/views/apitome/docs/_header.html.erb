@@ -1,7 +1,15 @@
 <header class="navbar navbar-fixed-top docs-nav" role="banner">
   <div class="container">
     <div class="navbar-header">
-      <h1 class="navbar-brand"><a href="<%= Apitome.configuration.mount_at %>"><%= Apitome.configuration.title %></a></h1>
+      <h1 class="navbar-brand">
+        <a href="<%= Apitome.configuration.mount_at %>">
+          <% if Apitome.configuration.logo_url %>
+            <%= image_tag Apitome.configuration.logo_url, id: 'navbar-logo', style: 'height: 25px;' %>
+          <% else %>
+            <%= Apitome.configuration.title %>
+          <% end %>
+        </a>
+      </h1>
     </div>
   </div>
 </header>

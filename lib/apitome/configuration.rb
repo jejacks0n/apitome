@@ -5,11 +5,13 @@ module Apitome
       :root,
       :doc_path,
       :parent_controller,
+      :logo_url,
       :title,
       :layout,
       :code_theme,
       :css_override,
       :js_override,
+      :favicon_url,
       :readme,
       :single_page,
       :remote_docs,
@@ -22,11 +24,13 @@ module Apitome
     @@root              = nil # will default to Rails.root if left unset
     @@doc_path          = "doc/api"
     @@parent_controller = "ActionController::Base"
+    @@logo_url          = nil
     @@title             = "Apitome Documentation"
     @@layout            = "apitome/application"
     @@code_theme        = "default"
     @@css_override      = nil
     @@js_override       = nil
+    @@favicon_url       = nil
     @@readme            = "../api.md"
     @@single_page       = true
     @@remote_docs       = false

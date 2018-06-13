@@ -16,6 +16,9 @@ Apitome.setup do |config|
   # `before_action`.
   config.parent_controller = "ActionController::Base"
 
+  # This allows you to set a logo for the documenation page which will replace the title if it exists.  By default title is used.
+  config.logo_url = nil
+
   # The title of the documentation -- If your project has a name, you'll want to put it here.
   config.title = "Apitome Documentation"
 
@@ -35,6 +38,9 @@ Apitome.setup do |config|
   # This allows you to override the javascript manually. You typically want to require `apitome/application` within the
   # override, but if you want to override it entirely you can do so.
   config.js_override = nil
+
+  # This allows you to set a favicon for the documenation page.  By default nothing is used.
+  config.favicon_url = nil
 
   # You can provide a 'README' style markdown file for the documentation, which is a useful place to include general
   # information. This path is relative to your doc_path configuration.

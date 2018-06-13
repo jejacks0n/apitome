@@ -6,6 +6,7 @@
   <%= stylesheet_link_tag    Apitome.configuration.code_theme_url, media: 'all' %>
   <%= stylesheet_link_tag    Apitome.configuration.css_override || 'apitome/application', media: 'all' %>
   <%= javascript_include_tag Apitome.configuration.js_override || 'apitome/application' %>
+  <%= favicon_link_tag Apitome.configuration.favicon_url if Apitome.configuration.favicon_url %>
 </head>
 <body class="<%= Apitome.configuration.single_page ? 'single-page' : '' %>">
 
