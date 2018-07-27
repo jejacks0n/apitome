@@ -9,6 +9,7 @@ group :development, :test do
   # test dependencies
   gem "rspec-rails"
   gem "capybara"
+  gem "puma"
   gem "aruba"
   gem "selenium-webdriver"
 

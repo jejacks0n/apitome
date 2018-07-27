@@ -25,12 +25,12 @@ RSpec.configure do |config|
 
   config.before(:each, shell: true) do
     @aruba_timeout_seconds = 180
-    clean_current_dir
+    setup_aruba
   end
 
   config.after(:each, shell: true) do
     restore_env
-    clean_current_dir
+    setup_aruba
   end
 
   config.before(:each, browser: true) do

@@ -9,4 +9,8 @@ env:
     - TRAVIS=true
     - DISPLAY=:99.0
 before_install:
+  - wget https://github.com/mozilla/geckodriver/releases/download/v0.21.0/geckodriver-v0.21.0-linux64.tar.gz
+  - mkdir -p geckodriver
+  - tar -xzf geckodriver-v0.21.0-linux64.tar.gz -C geckodriver
+  - export PATH=$PATH:$PWD/geckodriver
   - gem install bundler
