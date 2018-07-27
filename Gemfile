@@ -12,6 +12,7 @@ group :development, :test do
   gem "puma"
   gem "aruba"
   gem "selenium-webdriver"
+  gem "chromedriver-helper"
 
   # io services
   gem "rubocop", require: false

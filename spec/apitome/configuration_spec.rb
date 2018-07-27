@@ -8,6 +8,11 @@ describe Apitome::Configuration do
       Apitome.setup do |config|
         config.parent_controller = 'TestController'
       end
+      if Apitome.const_defined?(:DocsController)
+        # If the class is already loaded, it needs re-loaded to pick up the config change
+        Apitome.send(:remove_const, :DocsController)
+        load "apitome/docs_controller.rb"
+      end
     end
 
     it 'inherits from the TestController' do
