@@ -43,37 +43,30 @@ feature "Reading in the browser", browser: true do
     visit "/api/docs"
 
     expect(page).to have_text(<<-TEXT.strip_heredoc)
-      A user access token is not always explicitly required, for instance if the user is unable to sign in and a
-      password reset is desired, or similarly, you may want to confirm username/email availability during registration.
-      For these types of requests only a client access token is required.
+      A user access token is not always explicitly required, for instance if the user is unable to sign in and a password reset is desired, or similarly, you may want to confirm username/email availability during registration. For these types of requests only a client access token is required.
     TEXT
 
     expect(page).to have_text(<<-TEXT.strip_heredoc)
       Endpoint
-
       POST /api/oauth/token
     TEXT
 
     expect(page).to have_text(<<-TEXT.strip_heredoc)
       Parameters
-
-      Name                    Description                   Expected
-      client_id required      Client ID (as provided)
-      client_secret required  Client Secret (as provided)
-      grant_type required     Grant Type                    client_credentials
+      Name Description Expected
+      client_id required Client ID (as provided)
+      client_secret required Client Secret (as provided)
+      grant_type required Grant Type client_credentials
     TEXT
 
     expect(page).to have_text(<<-TEXT.strip_heredoc)
       Request
-
       Route
       POST /api/oauth/token
-
       Headers
       Content-Type: application/json
       Host: example.com
-      Cookie:
-
+      Cookie: 
       Body
       {
         "client_id": "04e83c5f62d57a5458c8fd970cf499677156274ab02895cf8dabcc6e07beb2b1",
@@ -84,10 +77,8 @@ feature "Reading in the browser", browser: true do
 
     expect(page).to have_text(<<-TEXT.strip_heredoc)
       Response
-
       Status
       200
-
       Headers
       X-Frame-Options: SAMEORIGIN
       X-XSS-Protection: 1; mode=block
@@ -99,7 +90,6 @@ feature "Reading in the browser", browser: true do
       X-Request-Id: abd02f7a-26a8-4757-8157-0540e97ba8c5
       X-Runtime: 0.020698
       Content-Length: 123
-
       Body
       {
         "access_token": "7200227cb2d451f60e7c8a36c94793b06e1006a32d3282e47b73b3fb0605906d",
