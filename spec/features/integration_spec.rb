@@ -71,7 +71,7 @@ feature "Reading in the browser", browser: true do
 
       Headers
       Content-Type: application/json
-      Host: example.com
+      Host: my.labguru.com
       Cookie:
 
       Body

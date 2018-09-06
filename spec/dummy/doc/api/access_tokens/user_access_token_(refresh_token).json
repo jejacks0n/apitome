@@ -37,7 +37,7 @@
       "request_body": "{\"client_id\":\"04e83c5f62d57a5458c8fd970cf499677156274ab02895cf8dabcc6e07beb2b1\",\"client_secret\":\"5c49359ffdc9b5ee6914716e573f9916ad6cbac1c13f4863a9082dcfdc7dab07\",\"grant_type\":\"refresh_token\",\"refresh_token\":\"04e83c5f62d57a5458c8fd970cf499677156274ab02895cf8dabcc6e07beb2b1\"}",
       "request_headers": {
         "Content-Type": "application/json",
-        "Host": "example.com",
+        "Host": "my.labguru.com",
         "Cookie": ""
       },
       "request_query_parameters": {
