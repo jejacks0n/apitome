@@ -129,6 +129,12 @@ After installation, your app will have an apitome initializer (app/config/initia
 
   <b>default:</b> <code>true</code>
 </dd>
+
+<dt> simulated_response </dt><dd>
+  If <code>simulated_response</code> is disabled you can hide the "Simulated Response" links.
+
+  <b>default:</b> <code>true</code>
+</dd>
 =======
 
 When you install Apitime an initializer file (app/config/initializers/apitome.rb) is generated that contains good

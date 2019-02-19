@@ -12,6 +12,13 @@ feature "Reading in the browser", browser: true do
     expect(page).to have_text("Test Documentation")
   end
 
+  it "hiding simulated response" do
+    Apitome.configuration.simulated_response = false
+    visit "/api/docs"
+
+    expect(page).not_to have_text("Simulated Response")
+  end
+
   it "displays the expected navigation" do
     visit "/api/docs"
 
