@@ -42,13 +42,13 @@ class Apitome::DocsController < Object.const_get(Apitome.configuration.parent_co
         "#{Apitome.configuration.doc_path}/#{file}"
       end
 
-      file = "#{Apitome.configuration.remote_url}/#{file}"
+      file = URI.encode("#{Apitome.configuration.remote_url}/#{file}")
     else
       file = Apitome.configuration.root.join(Apitome.configuration.doc_path, file)
       raise Apitome::FileNotFoundError.new("Unable to find #{file}") unless File.exists?(file)
     end
 
-    open(file).read
+    open(file, file_opts).read
   end
 
   def resources
@@ -61,6 +61,16 @@ class Apitome::DocsController < Object.const_get(Apitome.configuration.parent_co
 
   def set_example(resource)
     @example = JSON.parse(file_for("#{resource}.json"))
+  end
+
+  def file_opts
+    if Apitome.configuration.remote_docs && Apitome.configuration.http_basic_authentication
+      {
+        http_basic_authentication: Apitome.configuration.http_basic_authentication
+      }
+    else
+      {}
+    end
   end
 
   def formatted_readme

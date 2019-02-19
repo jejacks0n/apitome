@@ -129,6 +129,12 @@ After installation, your app will have an apitome initializer (app/config/initia
 
   <b>default:</b> <code>true</code>
 </dd>
+
+<dt> http_basic_authentication </dt><dd>
+  If <code>remote_url</code> is enabled, you can fetch the remote docs using HTTP Basic Authentication by setting the configuration to an array of the user and password. Usage: <code>http_basic_authentication = ['user', 'password']</code><br/>
+
+  <b>default:</b> <code>nil</code>
+</dd>
 =======
 
 When you install Apitime an initializer file (app/config/initializers/apitome.rb) is generated that contains good
