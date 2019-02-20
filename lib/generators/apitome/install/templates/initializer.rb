@@ -62,4 +62,8 @@ Apitome.setup do |config|
   # If you would like to precompile your own assets, you can disable auto-compilation.
   # This defaults to true
   config.precompile_assets = true
+
+  # If you do not want "Simulated Response" links to appear you can disable them.
+  # This defaults to true
+  config.simulated_response = true
 end
