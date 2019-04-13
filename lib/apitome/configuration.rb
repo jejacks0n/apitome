@@ -1,5 +1,9 @@
+require "singleton"
+
 module Apitome
   class Configuration
+    include Singleton
+
     cattr_accessor *[
       :mount_at,
       :root,
@@ -12,45 +16,40 @@ module Apitome
       :js_override,
       :readme,
       :single_page,
-      :remote_docs,
-      :remote_url,
       :url_formatter,
+      :remote_url,
+      :http_basic_authentication
       :precompile_assets,
       :simulated_response,
-      :http_basic_authentication
     ]
 
-    @@mount_at                  = "/api/docs"
-    @@root                      = nil # will default to Rails.root if left unset
-    @@doc_path                  = "doc/api"
-    @@parent_controller         = "ActionController::Base"
-    @@title                     = "Apitome Documentation"
-    @@layout                    = "apitome/application"
-    @@code_theme                = "default"
-    @@css_override              = nil
-    @@js_override               = nil
-    @@readme                    = "../api.md"
-    @@single_page               = true
-    @@remote_docs               = false
-    @@remote_url                = nil
-    @@url_formatter             = -> (str) { str.gsub(/\.json$/, '').underscore.gsub(/[^0-9a-z]+/i, '-') }
-    @@precompile_assets         = true
-    @@simulated_response        = true
+    @@mount_at = "/api/docs"
+    @@root = nil # will default to Rails.root if left unset
+    @@doc_path = "doc/api"
+    @@parent_controller = "ActionController::Base"
+    @@title = "Apitome Documentation"
+    @@layout = "apitome/application"
+    @@code_theme = "default"
+    @@css_override = nil
+    @@js_override = nil
+    @@readme = "../api.md"
+    @@single_page = true
+    @@url_formatter = -> (str) { str.gsub(/\.json$/, "").underscore.gsub(/[^0-9a-z]+/i, "-") }
+    @@remote_url = nil
     @@http_basic_authentication = nil
+    @@precompile_assets = true
+    @@simulated_response = true
 
     def self.root=(path)
       @@root = Pathname.new(path.to_s) if path.present?
-    end
-
-    def self.code_theme_url
-      "apitome/highlight_themes/#{@@code_theme}"
     end
   end
 
   mattr_accessor :configuration
   @@configuration = Configuration
 
-  def self.setup
+  def self.configure
     yield @@configuration
   end
+  singleton_class.send(:alias_method, :setup, :configure)
 end

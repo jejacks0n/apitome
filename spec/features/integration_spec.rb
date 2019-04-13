@@ -3,6 +3,13 @@ require "spec_helper"
 feature "Reading in the browser", browser: true do
   before do
     visit "/api/docs"
+    @orig_title = Apitome.configuration.title
+    @orig_simulated_response = Apitome.configuration.simulated_response
+  end
+
+  after do
+    Apitome.configuration.title = @orig_title
+    Apitome.configuration.simulated_response = @orig_simulated_response
   end
 
   it "displays the configured title" do

@@ -1,26 +1,26 @@
 module Apitome
   class Engine < ::Rails::Engine
     isolate_namespace Apitome
+    apitome = Apitome.configuration
 
-    if Apitome.configuration.precompile_assets && config.respond_to?(:assets)
-      config.assets.precompile += %w{apitome/*.css apitome/*.js}
-    else
-      config.assets.precompile += %w{} # Have to set this to empty for it to work
+    routes do
+      root to: "docs#index"
+      get "/simulate/*path", to: "docs#simulate", as: :simulated if apitome.simulated_response
+      get "/*path", to: "docs#show" unless Apitome.configuration.single_page
     end
 
-    config.assets.paths << root.join('assets', 'stylesheets').to_s
-    config.assets.paths << root.join('assets', 'javascripts').to_s
-
     initializer :assets, group: :all do |app|
-      # default the root if it's not set
-      Apitome.configuration.root ||= app.root
+      apitome.root ||= app.root
+
+      config.assets.precompile += ["apitome/*.css", "apitome/*.js"]
+      config.assets.paths << root.join("assets", "stylesheets").to_s
+      config.assets.paths << root.join("assets", "javascripts").to_s
     end
 
     config.after_initialize do |app|
-      # prepend routes so a catchall doesn't get in the way
-      if Apitome.configuration.mount_at.present?
+      if apitome.mount_at.present?
         app.routes.prepend do
-          mount Apitome::Engine => Apitome.configuration.mount_at
+          mount Apitome::Engine => apitome.mount_at
         end
       end
     end
