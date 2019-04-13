@@ -10,7 +10,7 @@ gem "puma"
 # test dependencies
 gem "rspec-rails"
 gem "capybara"
-gem "aruba"
+gem "aruba", "~> 0.14.9"
 gem "selenium-webdriver"
 gem "chromedriver-helper"
 gem "simplecov"
