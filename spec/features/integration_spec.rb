@@ -73,7 +73,7 @@ feature "Reading in the browser", browser: true do
       Headers
       Content-Type: application/json
       Host: example.com
-      Cookie:
+      Cookie: 
       Body
       {
         "client_id": "04e83c5f62d57a5458c8fd970cf499677156274ab02895cf8dabcc6e07beb2b1",
