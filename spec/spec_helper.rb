@@ -25,7 +25,7 @@ register_driver(:chrome)
 register_driver(:chrome_headless, %w[headless disable-gpu no-sandbox disable-dev-shm-usage])
 
 Aruba.configure do |config|
-  config.io_wait_timeout = 680
+  config.exit_timeout = 60
 end
 
 RSpec.configure do |config|

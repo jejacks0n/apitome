@@ -46,7 +46,7 @@ feature "Reading in the browser", browser: true do
     expect(page).to have_text("Access Tokens")
     expect(page).to have_text(<<-TEXT.strip_heredoc)
       Client access token (client credentials)
-      User access token (password)
+      User access token [password]
       - When the user credentials are invalid
       - When the user has been locked out
       User access token (refresh token)
