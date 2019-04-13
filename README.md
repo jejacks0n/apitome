@@ -131,13 +131,12 @@ following parameters that can be used to customize apitome. Note: Restart rails 
   <b>default:</b> <code>-> (str) { str.gsub(/\.json$/, '').underscore.gsub(/[^0-9a-z]+/i, '-') }</code>
 </dd>
 
-<dt> precompile_assets </dt><dd>
+<dt> remote_url </dt><dd>
   You can setup the docs to be loaded from a remote URL if they are not available in the application environment. This
   URL is used as the base location and should be set to where the readme is located. If left nil, local is assumed.
   <br/>
   <b>default:</b> <code>nil</code>
 </dd>
-
 
 <dt> precompile_assets </dt><dd>
   By default all assets that ship with this library are precompiled by the asset pipeline. If you would prefer to
