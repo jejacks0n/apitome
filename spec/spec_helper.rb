@@ -1,18 +1,14 @@
 ENV["RAILS_ENV"] ||= "test"
 ENV["RAILS_ROOT"] = File.expand_path("../dummy", __FILE__)
 require_relative "dummy/config/environment"
-
-require "apitome"
-
 require "rspec/rails"
 require "capybara/rails"
 require "aruba/api"
+require "simplecov"
 
-# require "fileutils"
-# require "ostruct"
+SimpleCov.start("rails") { coverage_dir "coverage/backend" }
 
-# Dir[File.expand_path("../support/**/*.rb", __FILE__)].each { |f| require f }
-
+require "apitome"
 
 def register_driver(name, args = [], opts = {})
   Capybara.register_driver(name) do |app|

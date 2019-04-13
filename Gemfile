@@ -13,6 +13,7 @@ gem "capybara"
 gem "aruba"
 gem "selenium-webdriver"
 gem "chromedriver-helper"
+gem "simplecov"
 
 # services
 gem "rubocop", require: false
