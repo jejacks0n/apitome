@@ -3,8 +3,8 @@ Apitome
 
 [![Gem Version](https://img.shields.io/gem/v/apitome.svg)](https://rubygems.org/gems/apitome)
 [![Build Status](https://img.shields.io/travis/jejacks0n/apitome.svg)](https://travis-ci.org/jejacks0n/apitome)
-[![Code Climate](https://img.shields.io/codeclimate/github/modeset/apitome.svg)](https://codeclimate.com/github/modeset/apitome)
-[![Test Coverage](https://codeclimate.com/github/modeset/apitome/badges/coverage.svg)](https://codeclimate.com/github/modeset/apitome)
+[![Maintainability](https://api.codeclimate.com/v1/badges/eb8dd1c22f1da11b6c02/maintainability)](https://codeclimate.com/github/jejacks0n/apitome/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/eb8dd1c22f1da11b6c02/test_coverage)](https://codeclimate.com/github/jejacks0n/apitome/test_coverage)
 [![License](http://img.shields.io/badge/license-MIT-brightgreen.svg)](http://opensource.org/licenses/MIT)
 
 Apitome is a API documentation tool for Rails built on top of the great RSpec DSL included in
