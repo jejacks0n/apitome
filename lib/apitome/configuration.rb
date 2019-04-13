@@ -16,10 +16,11 @@ module Apitome
       :js_override,
       :readme,
       :single_page,
-      :remote_url,
       :url_formatter,
+      :remote_url,
+      :http_basic_authentication,
       :precompile_assets,
-      :simulated_response
+      :simulated_response,
     ]
 
     @@mount_at = "/api/docs"
@@ -33,8 +34,9 @@ module Apitome
     @@js_override = nil
     @@readme = "../api.md"
     @@single_page = true
-    @@remote_url = nil
     @@url_formatter = -> (str) { str.gsub(/\.json$/, "").underscore.gsub(/[^0-9a-z]+/i, "-") }
+    @@remote_url = nil
+    @@http_basic_authentication = nil
     @@precompile_assets = true
     @@simulated_response = true
 

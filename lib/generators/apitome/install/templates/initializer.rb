@@ -52,6 +52,12 @@ Apitome.configure do |config|
   # URL is used as the base location and should be set to where the readme is located. If left nil, local is assumed.
   config.remote_url = nil
 
+  # If the remote_docs is set to true, and the remote URL is protected by
+  # HTTP Basic Authentication you can set the user and password here as an array.
+  # Usage: `http_basic_authentication = ['user', 'password']`.
+  # This defaults to nil.
+  config.http_basic_authentication = nil
+
   # If you would like to precompile your own assets, you can disable auto-compilation.
   config.precompile_assets = true
 

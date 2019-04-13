@@ -56,7 +56,7 @@ following parameters that can be used to customize apitome. Note: Restart rails 
 
 <dt> root </dt><dd>
   This defaults to Rails.root if left nil. If you're providing documentation for an engine using a dummy application
-  it can be useful to set this to your engines root.. E.g. `Application::Engine.root`
+  it can be useful to set this to your engines root. (E.g. `Application::Engine.root`)
   <br/>
   <b>default:</b> <code>nil</code>
 </dd>
@@ -138,6 +138,13 @@ following parameters that can be used to customize apitome. Note: Restart rails 
   <b>default:</b> <code>nil</code>
 </dd>
 
+<dt> http_basic_authentication </dt><dd>
+  If using remote urls you can fetch the remote docs using HTTP Basic Authentication by configuring this to be an
+  array of the user and password. (E.g. `['user', 'password']`)
+  <br/>
+  <b>default:</b> <code>nil</code>
+</dd>
+
 <dt> precompile_assets </dt><dd>
   By default all assets that ship with this library are precompiled by the asset pipeline. If you would prefer to
   control this yourself, you can disable it by changing this to false.
@@ -150,6 +157,10 @@ following parameters that can be used to customize apitome. Note: Restart rails 
   <br>
   <b>default:</b> <code>true</code>
 </dd>
+
+When you install Apitime an initializer file (app/config/initializers/apitome.rb) is generated that contains good
+documentation for each configuration directive. Otherwise you can get a refresher by checking the
+[Apitome Configuration](https://github.com/modeset/apitome/wiki/Apitome-Configuration) article.
 
 ## Customization
 You can put custom views and partials in your own `views/apitome/docs` -- check
