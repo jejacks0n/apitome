@@ -19,22 +19,22 @@ module Apitome
       :simulated_response
     ]
 
-    @@mount_at                  = "/api/docs"
-    @@root                      = nil # will default to Rails.root if left unset
-    @@doc_path                  = "doc/api"
-    @@parent_controller         = "ActionController::Base"
-    @@title                     = "Apitome Documentation"
-    @@layout                    = "apitome/application"
-    @@code_theme                = "default"
-    @@css_override              = nil
-    @@js_override               = nil
-    @@readme                    = "../api.md"
-    @@single_page               = true
-    @@remote_docs               = false
-    @@remote_url                = nil
-    @@url_formatter             = -> (str) { str.gsub(/\.json$/, '').underscore.gsub(/[^0-9a-z]+/i, '-') }
-    @@precompile_assets         = true
-    @@simulated_response        = true
+    @@mount_at = "/api/docs"
+    @@root = nil # will default to Rails.root if left unset
+    @@doc_path = "doc/api"
+    @@parent_controller = "ActionController::Base"
+    @@title = "Apitome Documentation"
+    @@layout = "apitome/application"
+    @@code_theme = "default"
+    @@css_override = nil
+    @@js_override = nil
+    @@readme = "../api.md"
+    @@single_page = true
+    @@remote_docs = false
+    @@remote_url = nil
+    @@url_formatter = -> (str) { str.gsub(/\.json$/, "").underscore.gsub(/[^0-9a-z]+/i, "-") }
+    @@precompile_assets = true
+    @@simulated_response = true
 
     def self.root=(path)
       @@root = Pathname.new(path.to_s) if path.present?

@@ -1,14 +1,18 @@
+language: ruby
 rvm:
-  - 2.3.0
   - 2.4.0
   - 2.5.0
+  - 2.6.0
 addons:
   chrome: stable
 before_script:
   - sh -e /etc/init.d/xvfb start
-env:
-  global:
-    - TRAVIS=true
-    - DISPLAY=:99.0
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
 before_install:
   - gem install bundler
+script:
+  - bundle exec rspec
+after_script:
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
