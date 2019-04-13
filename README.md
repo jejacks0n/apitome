@@ -29,6 +29,8 @@ Optionally run the install generator to get the initializer and an initial readm
 rails generate apitome:install
 ```
 
+You can get the assets installed using the generator by providing a `--assets` flag.
+
 Update your `spec_helper.rb` to adjust how RAD outputs its results -- Apitome reads these JSON files to generate the
 documentation.
 
