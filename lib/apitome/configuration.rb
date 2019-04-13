@@ -32,7 +32,7 @@ module Apitome
     @@single_page = true
     @@remote_docs = false
     @@remote_url = nil
-    @@url_formatter = -> (str) { str.gsub(/\.json$/, '').underscore.gsub(/[^0-9a-z]+/i, '-') }
+    @@url_formatter = -> (str) { str.gsub(/\.json$/, "").underscore.gsub(/[^0-9a-z]+/i, "-") }
     @@precompile_assets = true
     @@simulated_response = true
 

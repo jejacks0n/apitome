@@ -1,12 +1,12 @@
 require "spec_helper"
 
 describe Apitome::Configuration do
-  describe 'parent_controller' do
+  describe "parent_controller" do
     class TestController < ActionController::Base; end
 
     before do
       Apitome.setup do |config|
-        config.parent_controller = 'TestController'
+        config.parent_controller = "TestController"
       end
       if Apitome.const_defined?(:DocsController)
         # If the class is already loaded, it needs re-loaded to pick up the config change
@@ -15,7 +15,7 @@ describe Apitome::Configuration do
       end
     end
 
-    it 'inherits from the TestController' do
+    it "inherits from the TestController" do
       expect(Apitome::DocsController).to be < TestController
     end
   end
