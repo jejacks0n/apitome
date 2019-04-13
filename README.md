@@ -48,22 +48,22 @@ following parameters that can be used to customize apitome. Note: Restart rails 
 <dl>
 <dt> mount_at </dt><dd>
   This determines where the Apitome routes will be mounted. Changing this to "/api/documentation" for instance would
-  allow you to browse to http://localhost:3000/api/documentation to see your api documentation. Set to nil and mount it
-  yourself if you need to.
+  allow you to browse to http://localhost:3000/api/documentation to see your api documentation. Set to nil and mount
+  it yourself if you need to.
   <br/>
   <b>default:</b> <code>"/api/docs"</code>
 </dd>
 
 <dt> root </dt><dd>
-  This defaults to Rails.root if left nil. If you're providing documentation for an engine using a dummy application it
-  can be useful to set this to your engines root.. E.g. <code>Application::Engine.root</code>
+  This defaults to Rails.root if left nil. If you're providing documentation for an engine using a dummy application
+  it can be useful to set this to your engines root.. E.g. `Application::Engine.root`
   <br/>
   <b>default:</b> <code>nil</code>
 </dd>
 
 <dt> doc_path </dt><dd>
-  This is where rspec_api_documentation outputs the JSON files. This is configurable within RAD, and so is configurable
-  here.
+  This is where rspec_api_documentation outputs the JSON files. This is configurable within RAD, and so is
+  configurable here.
   <br/>
   <b>default:</b> <code>"doc/api"</code>
 </dd>
@@ -97,8 +97,8 @@ following parameters that can be used to customize apitome. Note: Restart rails 
 </dd>
 
 <dt> css_override </dt><dd>
-  This allows you to override the css manually. You typically want to require `apitome/application` within the override,
-  but if you want to override it entirely you can do so.
+  This allows you to override the css manually. You typically want to require `apitome/application` within the
+  override, but if you want to override it entirely you can do so.
   <br/>
   <b>default:</b> <code>nil</code>
 </dd>
@@ -130,6 +130,14 @@ following parameters that can be used to customize apitome. Note: Restart rails 
   <br/>
   <b>default:</b> <code>-> (str) { str.gsub(/\.json$/, '').underscore.gsub(/[^0-9a-z]+/i, '-') }</code>
 </dd>
+
+<dt> precompile_assets </dt><dd>
+  You can setup the docs to be loaded from a remote URL if they are not available in the application environment. This
+  URL is used as the base location and should be set to where the readme is located. If left nil, local is assumed.
+  <br/>
+  <b>default:</b> <code>nil</code>
+</dd>
+
 
 <dt> precompile_assets </dt><dd>
   By default all assets that ship with this library are precompiled by the asset pipeline. If you would prefer to

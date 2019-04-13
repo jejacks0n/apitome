@@ -12,7 +12,6 @@ module Apitome
       :js_override,
       :readme,
       :single_page,
-      :remote_docs,
       :remote_url,
       :url_formatter,
       :precompile_assets,
@@ -30,7 +29,6 @@ module Apitome
     @@js_override = nil
     @@readme = "../api.md"
     @@single_page = true
-    @@remote_docs = false
     @@remote_url = nil
     @@url_formatter = -> (str) { str.gsub(/\.json$/, "").underscore.gsub(/[^0-9a-z]+/i, "-") }
     @@precompile_assets = true

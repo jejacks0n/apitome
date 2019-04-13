@@ -5,11 +5,8 @@ module Apitome
 
       desc "Installs the Apitome initializer and markdown file into your application."
 
-      class_option :assets,
-                   type: :boolean,
-                   aliases: "-a",
-                   default: false,
-                   desc: "Install the javascript and stylesheet assets to /public"
+      class_option :assets, type: :boolean, default: false,
+        aliases: "-a", desc: "Install the javascript and stylesheet assets to /public"
 
       def copy_initializers
         copy_file "templates/initializer.rb", "config/initializers/apitome.rb"
