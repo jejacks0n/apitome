@@ -6,11 +6,11 @@ module Apitome::DocsHelper
   end
 
   def resource_link(resource)
-    "#{Apitome.configuration.mount_at}/#{resource['examples'].first['link'].gsub(/\.json$/, '')}"
+    "#{Apitome.configuration.mount_at}/#{CGI.escape(resource['examples'].first['link'].gsub(/\.json$/, ''))}"
   end
 
   def example_link(example)
-    "#{Apitome.configuration.mount_at}/#{example['link'].gsub(/\.json$/, '')}"
+    "#{Apitome.configuration.mount_at}/#{CGI.escape(example['link'].gsub(/\.json$/, ''))}"
   end
 
   def link_active?(link)

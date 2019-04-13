@@ -9,8 +9,8 @@
           "groups": "all"
         },
         {
-          "description": "User access token (password)",
-          "link": "access_tokens/user_access_token_(password).json",
+          "description": "User access token [password]",
+          "link": "access_tokens/user_access_token_[password].json",
           "groups": "all"
         },
         {

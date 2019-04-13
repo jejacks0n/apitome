@@ -37,7 +37,7 @@ class Apitome::DocsController < Object.const_get(Apitome.configuration.parent_co
     def file_for(file, readme: false)
       if Apitome.configuration.remote_url
         file = readme ? file : "#{Apitome.configuration.doc_path}/#{file}"
-        file = URI.encode("#{Apitome.configuration.remote_url}/#{file}")
+        file = CGI.escape("#{Apitome.configuration.remote_url}/#{file}")
       else
         file = Apitome.configuration.root.join(Apitome.configuration.doc_path, file)
         raise Apitome::FileNotFoundError.new("Unable to find #{file}") unless File.exist?(file)
