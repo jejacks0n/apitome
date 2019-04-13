@@ -1,4 +1,4 @@
-Apitome.setup do |config|
+Apitome.configure do |config|
   # This determines where the Apitome routes will be mounted. Changing this to "/api/documentation" for instance would
   # allow you to browse to http://localhost:3000/api/documentation to see your api documentation. Set to nil and mount
   # it yourself if you need to.

@@ -15,11 +15,13 @@ module Apitome
 
       def copy_assets
         return unless options[:assets]
-        copy_file "../../../../app/assets/javascripts/apitome/bundle.js", "public/javascripts/apitome/application.js"
-        copy_file "../../../../app/assets/stylesheets/apitome/bundle.css", "public/stylesheets/apitome/application.css"
+        @asset_root = "../../../../app/assets"
+
+        copy_file "#{@asset_root}/javascripts/apitome/bundle.js", "public/javascripts/apitome/application.js"
+        copy_file "#{@asset_root}/stylesheets/apitome/bundle.css", "public/stylesheets/apitome/application.css"
       end
 
-      def display_readme
+      def display_post_install
         readme "POST_INSTALL" if behavior == :invoke
       end
     end

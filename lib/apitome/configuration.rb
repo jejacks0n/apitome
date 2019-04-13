@@ -1,5 +1,9 @@
+require "singleton"
+
 module Apitome
   class Configuration
+    include Singleton
+
     cattr_accessor *[
       :mount_at,
       :root,
@@ -37,16 +41,13 @@ module Apitome
     def self.root=(path)
       @@root = Pathname.new(path.to_s) if path.present?
     end
-
-    def self.code_theme_url
-      "apitome/highlight_themes/#{@@code_theme}"
-    end
   end
 
   mattr_accessor :configuration
   @@configuration = Configuration
 
-  def self.setup
+  def self.configure
     yield @@configuration
   end
+  singleton_class.send(:alias_method, :setup, :configure)
 end

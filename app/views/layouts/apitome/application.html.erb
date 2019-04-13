@@ -3,11 +3,11 @@
 <head>
   <title><%= Apitome.configuration.title %></title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <%= stylesheet_link_tag Apitome.configuration.code_theme_url, media: 'all' %>
-  <%= stylesheet_link_tag Apitome.configuration.css_override || 'apitome/application', media: 'all' %>
-  <%= javascript_include_tag Apitome.configuration.js_override || 'apitome/application' %>
+  <%= stylesheet_link_tag "apitome/highlight_themes/#{Apitome.configuration.code_theme}", media: "all" %>
+  <%= stylesheet_link_tag Apitome.configuration.css_override || "apitome/application", media: "all" %>
+  <%= javascript_include_tag Apitome.configuration.js_override || "apitome/application" %>
 </head>
-<body class="<%= Apitome.configuration.single_page ? 'single-page' : '' %>">
+<body class="<%= Apitome.configuration.single_page ? "single-page" : "" %>">
 
 <div class="container">
   <%= render 'header' %>
