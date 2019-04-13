@@ -18,7 +18,7 @@ module Apitome
       :single_page,
       :url_formatter,
       :remote_url,
-      :http_basic_authentication
+      :http_basic_authentication,
       :precompile_assets,
       :simulated_response,
     ]
