@@ -5,7 +5,7 @@ Apitome
 [![Build Status](https://img.shields.io/travis/jejacks0n/apitome.svg)](https://travis-ci.org/jejacks0n/apitome)
 [![Maintainability](https://api.codeclimate.com/v1/badges/eb8dd1c22f1da11b6c02/maintainability)](https://codeclimate.com/github/jejacks0n/apitome/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/eb8dd1c22f1da11b6c02/test_coverage)](https://codeclimate.com/github/jejacks0n/apitome/test_coverage)
-[![License](http://img.shields.io/badge/license-MIT-brightgreen.svg)](http://opensource.org/licenses/MIT)
+[![License](https://img.shields.io/badge/license-MIT-brightgreen.svg)](https://opensource.org/licenses/MIT)
 
 Apitome is a API documentation tool for Rails built on top of the great RSpec DSL included in
 [rspec_api_documentation](https://github.com/zipmark/rspec_api_documentation) (RAD). It's designed to display the
