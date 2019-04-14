@@ -13,12 +13,11 @@ Gem::Specification.new do |s|
   s.email       = ["jejacks0n@gmail.com"]
   s.homepage    = "https://github.com/jejacks0n/apitome"
   s.summary     = "Apitome: /iˈpitəmē/ An API documentation reader RSpec API Documentation"
-  s.description = "API documentation renderer for Rails using RSpec API Documentation JSON output"
+  s.description = "Present clean and usable API documentation generated from RSpec API Documentation JSON output."
   s.license     = "MIT"
   s.files       = Dir["{app,config,lib,vendor}/**/*"] + ["MIT.LICENSE", "README.md"]
 
   s.required_ruby_version = "~> 2.4"
-
   s.add_dependency "railties"
   s.add_dependency "kramdown" # TODO: is this required?
   s.add_development_dependency "rspec_api_documentation"
