@@ -27,6 +27,7 @@ describe Apitome::Configuration do
     expect(subject.readme).to eq("../api.md")
     expect(subject.single_page).to be_truthy
     expect(subject.remote_url).to be_nil
+    expect(subject.http_basic_authentication).to be_nil
     # expect(subject.url_formatter).to be_truthy
     expect(subject.precompile_assets).to be_truthy
     expect(subject.simulated_response).to be_truthy

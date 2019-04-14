@@ -3,7 +3,7 @@ require "open-uri"
 class Apitome::DocsController < Object.const_get(Apitome.configuration.parent_controller)
   layout Apitome.configuration.layout
 
-  helper_method *[
+  helper_method(*[
     :resources,
     :example,
     :formatted_body,
@@ -13,7 +13,7 @@ class Apitome::DocsController < Object.const_get(Apitome.configuration.parent_co
     :set_example,
     :id_for,
     :rendered_markdown
-  ]
+  ])
 
   def index
   end

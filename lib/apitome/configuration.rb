@@ -4,7 +4,7 @@ module Apitome
   class Configuration
     include Singleton
 
-    cattr_accessor *[
+    cattr_accessor(*[
       :mount_at,
       :root,
       :doc_path,
@@ -21,7 +21,7 @@ module Apitome
       :http_basic_authentication,
       :precompile_assets,
       :simulated_response,
-    ]
+    ])
 
     @@mount_at = "/api/docs"
     @@root = nil # will default to Rails.root if left unset
@@ -51,5 +51,6 @@ module Apitome
   def self.configure
     yield @@configuration
   end
+
   singleton_class.send(:alias_method, :setup, :configure)
 end
