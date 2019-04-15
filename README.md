@@ -166,8 +166,8 @@ documentation for each configuration directive. Otherwise you can get a refreshe
 
 ## Customization
 You can put custom views and partials in your own `views/apitome/docs` -- check
-[here for examples](tree/master/app/views/apitome/docs). You can put any partial in your own path and they will be
-overridden.
+[here for examples](https://github.com/jejacks0n/apitome/tree/master/app/views/apitome/docs). You can put any
+partial in your own path and they will be overridden.
 
 Additional customization can come in the form of providing custom css and javascript. You can do this by creating the
 files you want (that often times require the default assets in the gem), and then configure Apitome to use those instead
