@@ -34,6 +34,6 @@ RSpec.configure do |config|
   config.include Aruba::Api
 
   config.before(:each, browser: true) do
-    Capybara.default_driver = Capybara.javascript_driver = ENV.fetch("CAPYBARA_DRIVER", "chrome_headless").to_sym
+    Capybara.default_driver = Capybara.javascript_driver = ENV.fetch("CAPYBARA_DRIVER", "selenium_chrome_headless").to_sym
   end
 end
