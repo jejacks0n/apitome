@@ -10,6 +10,7 @@ require_relative "dummy/config/environment"
 require "rspec/rails"
 require "capybara/rails"
 require "aruba/rspec"
+require "webdrivers"
 require "apitome"
 
 def register_driver(name, args = [], opts = {})
