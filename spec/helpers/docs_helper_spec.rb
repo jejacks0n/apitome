@@ -26,4 +26,12 @@ describe Apitome::DocsHelper, type: :helper do
       expect(subject).to eq "/api/docs/an-example"
     end
   end
+
+  describe "#format_scope" do
+    it { expect(format_scope("")).to be_blank }
+    it { expect(format_scope("item")).to eq("item") }
+    it { expect(format_scope(:item)).to eq("item") }
+    it { expect(format_scope(%w[item item_id])).to eq("item[item_id]") }
+    it { expect(format_scope(%i[item item_id])).to eq("item[item_id]") }
+  end
 end
