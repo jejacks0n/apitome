@@ -159,6 +159,7 @@ following parameters that can be used to customize apitome. Note: Restart rails 
   <br>
   <b>default:</b> <code>true</code>
 </dd>
+</dl>
 
 When you install Apitime an initializer file (app/config/initializers/apitome.rb) is generated that contains good
 documentation for each configuration directive. Otherwise you can get a refresher by checking the
