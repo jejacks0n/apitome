@@ -80,14 +80,9 @@ class Apitome::DocsController < Object.const_get(Apitome.configuration.parent_co
     end
 
     def formatted_body(body, type)
-      if type =~ /json/ && body.present?
-        JSON.pretty_generate(JSON.parse(body))
-      else
-        body
-      end
-    rescue JSON::ParserError
       return body if body == " "
-      raise JSON::ParserError
+      return body unless type =~ /json/ && body.present?
+      JSON.pretty_generate(JSON.parse(body))
     end
 
     def param_headers(params)
