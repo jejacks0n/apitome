@@ -80,14 +80,19 @@ class Apitome::DocsController < Object.const_get(Apitome.configuration.parent_co
     end
 
     def formatted_body(body, type)
+      return body if body == " "
+      return body if body == "[binary data]" # see https://github.com/zipmark/rspec_api_documentation/blob/560c3bdc7bd5581e7c223334390221ecfc910be8/lib/rspec_api_documentation/client_base.rb#L88-L96
       if type =~ /json/ && body.present?
         JSON.pretty_generate(JSON.parse(body))
       else
         body
       end
-    rescue JSON::ParserError
-      return body if body == " "
-      raise JSON::ParserError
+    rescue => e
+      if Apitome.configuration.formatted_body_error_handler
+        Apitome.configuration.formatted_body_error_handler.call(e, body, type)
+      else
+        raise
+      end
     end
 
     def param_headers(params)
