@@ -3,6 +3,8 @@ rvm:
   - 2.4.0
   - 2.5.0
   - 2.6.0
+services:
+  - xvfb
 addons:
   chrome: stable
 before_script:
@@ -12,6 +14,6 @@ before_script:
 before_install:
   - gem install bundler
 script:
-  - bundle exec rspec
+  - xvfb-run bundle exec rspec
 after_script:
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
