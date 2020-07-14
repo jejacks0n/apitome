@@ -1,19 +1,19 @@
-ruby "2.2.0"
 source "https://rubygems.org"
+git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 gemspec
 
-group :development, :test do
-  # dummy app dependencies
-  gem "rails"
+gem "rails"
+gem "puma"
 
-  # test dependencies
-  gem "rspec-rails"
-  gem "capybara"
-  gem "aruba"
-  gem "selenium-webdriver"
+# test dependencies
+gem "rspec-rails"
+gem "capybara"
+gem "aruba", "~> 0.14.9"
+gem "selenium-webdriver"
+gem "chromedriver-helper"
+gem "simplecov"
 
-  # io services
-  gem "rubocop", require: false
-  gem "codeclimate-test-reporter", require: false
-end
+# services
+gem "rubocop", require: false
+gem "rubocop-rails_config"

@@ -1,10 +1,18 @@
+language: ruby
 rvm:
-  - 2.2.0
+  - 2.4.0
+  - 2.5.0
+  - 2.6.0
+addons:
+  chrome: stable
 before_script:
-  - sh -e /etc/init.d/xvfb start
-env:
-  global:
-    - TRAVIS=true
-    - DISPLAY=:99.0
-before_install: 
+  - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
+before_install:
   - gem install bundler
+script:
+  - bundle exec rspec
+after_script:
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
