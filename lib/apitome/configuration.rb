@@ -58,11 +58,3 @@ module Apitome
 
   singleton_class.send(:alias_method, :setup, :configure)
 end
-
-  mattr_accessor :configuration
-  @@configuration = Configuration
-
-  def self.setup
-    yield @@configuration
-  end
-end
