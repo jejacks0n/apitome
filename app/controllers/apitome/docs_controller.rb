@@ -76,6 +76,8 @@ class Apitome::DocsController < ActionController::Base
   end
 
   def formatted_body(body, type)
+    return body if body == " "
+    return body if body == "[binary data]" # see https://github.com/zipmark/rspec_api_documentation/blob/560c3bdc7bd5581e7c223334390221ecfc910be8/lib/rspec_api_documentation/client_base.rb#L88-L96
     if type =~ /json/ && body.present?
       JSON.pretty_generate(JSON.parse(body))
     else
