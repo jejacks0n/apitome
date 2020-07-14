@@ -8,20 +8,40 @@
   <div id="<%= "request-#{index}" %>">
     <h3><%= t(:request, scope: :apitome) %></h3>
     <div class="request">
+      <% begin %>
       <%= render partial: 'apitome/docs/route',    locals: {request: request, index: index} %>
       <%= render partial: 'apitome/docs/headers',  locals: {request: request, index: index, headers: request['request_headers']} %>
       <%= render partial: 'apitome/docs/query',    locals: {request: request, index: index} unless request['request_query_parameters'].empty? %>
       <%= render partial: 'apitome/docs/body',     locals: {request: request, index: index, body: request['request_body'], type: request['request_content_type']} if request['request_body'] %>
       <%= render partial: 'apitome/docs/curl',     locals: {request: request, index: index} if request['curl'] %>
+      <%
+        rescue => e
+          if Apitome.configuration.example_error_handler
+            Apitome.configuration.example_error_handler.call(e, "request", request)
+          else
+            raise
+          end
+        end
+      %>
     </div>
 
     <h3><%= t(:response, scope: :apitome) %></h3>
     <div class="response">
+      <% begin %>
       <%#= link_to('Simulated Response', "#{Apitome.configuration.mount_at}/simulate/#{link}") unless link.empty? %>
       <%= render partial: 'apitome/docs/response_fields', locals: {params: example['response_fields']} if example['response_fields'].size > 0 %>
       <%= render partial: 'apitome/docs/status',          locals: {request: request, index: index} %>
       <%= render partial: 'apitome/docs/headers',         locals: {request: request, index: index, headers: request['response_headers']} %>
       <%= render partial: 'apitome/docs/body',            locals: {request: request, index: index, body: request['response_body'], type: request['response_content_type']} if request['response_body'] %>
+      <%
+        rescue => e
+          if Apitome.configuration.example_error_handler
+            Apitome.configuration.example_error_handler.call(e, "response", request)
+          else
+            raise
+          end
+        end
+      %>
     </div>
   </div>
 <% end %>
