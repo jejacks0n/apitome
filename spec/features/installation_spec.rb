@@ -4,16 +4,17 @@ feature "Installation", shell: true do
   before do
     unset_bundler_env_vars
 
-    run_simple("bundle exec rails new testapp --skip-bundle --skip-activerecord")
+    run_command_and_stop("bundle exec rails new testapp --skip-bundle --skip-activerecord")
     cd("testapp")
 
     append_to_file("Gemfile", %{\ngem 'apitome', path: '../../../'\n})
-    run_simple("bundle install#{!ENV["TRAVIS"] ? ' --local' : ''}")
+    run_command_and_stop("bundle install")
   end
 
   it "installs the base files" do
-    run_simple("bundle exec rails generate apitome:install --trace")
-    expect(all_output).to include(<<-OUTPUT.strip_heredoc)
+    run_command_and_stop("bundle exec rails generate apitome:install --trace")
+    out = all_commands.map { |c| c.output }.join("\n")
+    expect(out).to include(<<-OUTPUT.strip_heredoc)
             create  config/initializers/apitome.rb
             create  doc/api.md
             create  public/javascripts/apitome/application.js
@@ -24,8 +25,9 @@ feature "Installation", shell: true do
   end
 
   it "can install without the asset files" do
-    run_simple("bundle exec rails generate apitome:install --no-assets --trace")
-    expect(all_output).to include(<<-OUTPUT.strip_heredoc)
+    run_command_and_stop("bundle exec rails generate apitome:install --no-assets --trace")
+    out = all_commands.map { |c| c.output }.join("\n")
+    expect(out).to include(<<-OUTPUT.strip_heredoc)
             create  config/initializers/apitome.rb
             create  doc/api.md
       +============================================================================+
