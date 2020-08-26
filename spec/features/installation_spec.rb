@@ -4,11 +4,11 @@ feature "Installation", shell: true do
   before do
     unset_bundler_env_vars
 
-    run_command_and_stop("bundle exec rails new testapp --skip-bundle --skip-activerecord")
+    run_command_and_stop("bundle exec rails new testapp --skip-bundle --skip-activerecord --skip-bootsnap --skip-webpack-install")
     cd("testapp")
 
     append_to_file("Gemfile", %{\ngem 'apitome', path: '../../../'\n})
-    run_command_and_stop("bundle install")
+    run_command_and_stop("bundle install", exit_timeout: 180)
   end
 
   it "installs the base files" do
