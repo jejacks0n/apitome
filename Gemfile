@@ -11,9 +11,12 @@ gem "rspec-rails"
 gem "capybara"
 gem "aruba", "~> 0.14.9"
 gem "selenium-webdriver"
-gem "chromedriver-helper"
+gem "webdrivers"
 gem "simplecov"
 
 # services
 gem "rubocop", require: false
 gem "rubocop-rails_config"
+
+# debug
+gem "pry"
