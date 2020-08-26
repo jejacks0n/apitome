@@ -8,7 +8,7 @@ feature "Installation", shell: true do
     cd("testapp")
 
     append_to_file("Gemfile", %{\ngem 'apitome', path: '../../../'\n})
-    run_command_and_stop("bundle install")
+    run_command_and_stop("bundle install", exit_timeout: 180)
   end
 
   it "installs the base files" do
