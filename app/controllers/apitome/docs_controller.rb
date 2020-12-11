@@ -103,7 +103,7 @@ class Apitome::DocsController < Object.const_get(Apitome.configuration.parent_co
 
     def param_extras(params)
       params.map do |param|
-        param.reject { |k, _v| %w{name description required scope}.include?(k) }.keys
+        param.reject { |k, _v| %w{name description required scope method}.include?(k) }.keys
       end.flatten.uniq
     end
 
