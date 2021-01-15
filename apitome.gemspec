@@ -17,7 +17,7 @@ Gem::Specification.new do |s|
   s.license     = "MIT"
   s.files       = Dir["{app,config,lib,vendor}/**/*"] + ["MIT.LICENSE", "README.md"]
 
-  s.required_ruby_version = "~> 2.4"
+  s.required_ruby_version = ">= 2.4"
   s.add_dependency "railties"
   s.add_dependency "kramdown" # TODO: is this required?
   s.add_development_dependency "rspec_api_documentation"
