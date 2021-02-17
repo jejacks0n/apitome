@@ -13,4 +13,4 @@ Layout/DefEndAlignment:
   EnforcedStyleAlignWith: def
 
 AllCops:
-  TargetRubyVersion: 2.6.2
+  TargetRubyVersion: 3.0.0
