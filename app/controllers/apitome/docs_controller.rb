@@ -43,7 +43,7 @@ class Apitome::DocsController < Object.const_get(Apitome.configuration.parent_co
         raise Apitome::FileNotFoundError.new("Unable to find #{file}") unless File.exist?(file)
       end
 
-      open(file, file_opts).read
+      open(file, **file_opts).read
     end
 
     def resources
