@@ -62,7 +62,7 @@ class Apitome::DocsController < Object.const_get(Apitome.configuration.parent_co
       if Apitome.configuration.remote_url && Apitome.configuration.http_basic_authentication
         { http_basic_authentication: Apitome.configuration.http_basic_authentication }
       else
-        {}
+        nil
       end
     end
 
