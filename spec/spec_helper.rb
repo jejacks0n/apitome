@@ -17,7 +17,7 @@ def register_driver(name, args = [], opts = {})
     options = { args: args + ["window-size=1440,1080"] }
     options[:binary] = ENV.fetch("GOOGLE_CHROME_SHIM", nil)
     capabilities = Selenium::WebDriver::Remote::Capabilities.chrome(chromeOptions: options.compact)
-    Capybara::Selenium::Driver.new(app, { browser: :chrome, desired_capabilities: capabilities }.merge(opts))
+    Capybara::Selenium::Driver.new(app, browser: :chrome, desired_capabilities: capabilities, **opts)
   end
 end
 
