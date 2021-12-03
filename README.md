@@ -91,9 +91,9 @@ following parameters that can be used to customize apitome. Note: Restart rails 
 </dd>
 
 <dt> code_theme </dt><dd>
-  We're using [highlight.js](https://github.com/isagalaev/highlight.js) for code highlighting, and it comes with some
-  great themes. You can check [here for themes](http://softwaremaniacs.org/media/soft/highlight/test.html), and enter
-  the theme as lowercase/underscore.
+  We're using <a href="https://github.com/isagalaev/highlight.js">highlight.js</a> for code highlighting, and it comes with
+  some great themes. You can check <a href="http://softwaremaniacs.org/media/soft/highlight/test.html">here for themes</a>,
+  and enter the theme as lowercase/underscore.
   <br/>
   <b>default:</b> <code>"default"</code>
 </dd>
@@ -159,6 +159,7 @@ following parameters that can be used to customize apitome. Note: Restart rails 
   <br>
   <b>default:</b> <code>true</code>
 </dd>
+</dl>
 
 When you install Apitime an initializer file (app/config/initializers/apitome.rb) is generated that contains good
 documentation for each configuration directive. Otherwise you can get a refresher by checking the
