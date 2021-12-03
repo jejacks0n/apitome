@@ -10,6 +10,7 @@ require_relative "dummy/config/environment"
 require "rspec/rails"
 require "capybara/rails"
 require "aruba/rspec"
+require "webdrivers"
 require "apitome"
 
 def register_driver(name, args = [], opts = {})
@@ -33,6 +34,6 @@ RSpec.configure do |config|
   config.include Aruba::Api
 
   config.before(:each, browser: true) do
-    Capybara.default_driver = Capybara.javascript_driver = ENV.fetch("CAPYBARA_DRIVER", "chrome_headless").to_sym
+    Capybara.default_driver = Capybara.javascript_driver = ENV.fetch("CAPYBARA_DRIVER", "selenium_chrome_headless").to_sym
   end
 end
